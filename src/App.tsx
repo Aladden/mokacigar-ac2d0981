@@ -6,6 +6,8 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
 import { Navigation } from "./components/Navigation";
 import { Home } from "./pages/Home";
+import { About } from "./pages/About";
+import { Brands } from "./pages/Brands";
 import { BrandDetail } from "./pages/BrandDetail";
 import { CigarDetail } from "./pages/CigarDetail";
 import { SearchPage } from "./pages/SearchPage";
@@ -25,6 +27,8 @@ const AppContent = () => {
       <Navigation onSearch={handleSearch} />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/brands" element={<Brands />} />
         <Route path="/brand/:brandId" element={<BrandDetail />} />
         <Route path="/cigar/:cigarId" element={<CigarDetail />} />
         <Route path="/search" element={<SearchPage />} />
