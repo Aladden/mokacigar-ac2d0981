@@ -81,7 +81,7 @@ export const brands: CigarBrand[] = [
   {
     id: 'h-upmann',
     name: 'H. Upmann',
-    logo: '/images/brands/h-upmann-logo.jpg',
+    logo: '/images/brands/h-upmann-logo.png',
     description: 'The tale of H. Upmann begins not with a tobacco planter, but with a German banker.',
     heritage: 'In 1844, Hermann Upmann arrived in Havana to work for an import/export company. A devoted cigar aficionado, he saw a business opportunity. He began sending cigars home to Europe, packaged in cedar boxes with his name on them. He soon founded both a bank and a cigar brand. His bank failed in the 1920s, but the cigar brand endured, becoming one of Cuba\'s most revered. A famous story claims that President John F. Kennedy, before signing the Cuban embargo in 1962, asked his press secretary, Pierre Salinger, to procure as many of his favorite H. Upmann Petit Upmanns as he could find. Salinger returned with 1,200 cigars, and only then did Kennedy sign the document, making them illegal. The brand remains a symbol of German precision and Cuban soul.',
     country: 'Cuba',
@@ -114,7 +114,7 @@ export const brands: CigarBrand[] = [
   {
     id: 'bolivar',
     name: 'Bolívar',
-    logo: '/images/brands/bolivar-logo.jpg',
+    logo: '/images/brands/bolivar-logo.png',
     description: 'Named for Simón Bolívar, the powerful 19th-century revolutionary who liberated much of South America.',
     heritage: 'Named for Simón Bolívar, the powerful 19th-century revolutionary who liberated much of South America from Spanish rule, this brand is not for the faint of heart. Established in 1902 by the Rocha company, Bolívar cigars embody the strength and revolutionary spirit of their namesake. The brand\'s artwork, featuring the General\'s portrait, is as bold as its flavor. For decades, the Bolívar brand was virtually unknown outside of Cuba, a secret kept by the most discerning smokers. It is renowned for producing some of the strongest, most full-bodied cigars in the Habanos portfolio, particularly the legendary Belicosos Finos. To smoke a Bolívar is to experience the raw, untamed power of Cuban tobacco.',
     country: 'Cuba',
@@ -125,7 +125,7 @@ export const brands: CigarBrand[] = [
   {
     id: 'punch',
     name: 'Punch',
-    logo: '/api/placeholder/300/300',
+    logo: '/images/brands/punch-logo.png',
     description: 'Classic, well-balanced, medium-bodied profile.',
     heritage: 'One of the very oldest Habanos brands, Punch was registered in 1840 by a German named Stockmann, with an eye on the burgeoning British market. He named the brand after the popular satirical magazine Punch, and its mischievous mascot, Mr. Punch, still adorns the box art to this day. The brand has a long and storied history and is prized for its classic, well-balanced, medium-bodied profile.',
     country: 'Cuba',
@@ -158,7 +158,7 @@ export const brands: CigarBrand[] = [
   {
     id: 'jose-l-piedra',
     name: 'José L. Piedra',
-    logo: '/api/placeholder/300/300',
+    logo: '/images/brands/jose-l-piedra-logo.png',
     description: 'Rustic and earthy character from Remedios region.',
     heritage: 'Founded in the 1880s, this brand is unique for two reasons. First, its blend is composed exclusively of tobacco grown in the Remedios (Vuelta Arriba) region, giving it a distinctively rustic and earthy character. Second, its vitolas are made using the totalmente a mano, tripa corta (totally handmade, short filler) technique, which makes them highly affordable.',
     country: 'Cuba',
@@ -191,7 +191,7 @@ export const brands: CigarBrand[] = [
   {
     id: 'cuaba',
     name: 'Cuaba',
-    logo: '/images/brands/cuaba-logo.jpg',
+    logo: '/images/brands/cuaba-logo.png',
     description: 'Unique double perfecto shapes, pointed at both ends.',
     heritage: 'Launched in 1996, Cuaba holds a unique position in the Habanos portfolio: every cigar it produces is a figurado, specifically a double perfecto shape, pointed at both ends. This revives a style that was highly popular in the 19th century but had fallen out of fashion.',
     country: 'Cuba',
@@ -224,7 +224,7 @@ export const brands: CigarBrand[] = [
   {
     id: 'fonseca',
     name: 'Fonseca',
-    logo: '/images/brands/fonseca-logo.jpg',
+    logo: '/images/brands/fonseca-logo.png',
     description: 'Wrapped in white tissue paper, light and aromatic.',
     heritage: 'Founded in the 1890s by Don Francisco Fonseca, this brand is immediately recognizable by its unique tradition of wrapping each cigar in a delicate sheath of white tissue paper. The blend is characteristically light and aromatic, well-suited for pairing with lighter meals or for those new to Habanos.',
     country: 'Cuba',
