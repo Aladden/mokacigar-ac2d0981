@@ -136,7 +136,7 @@ export const brands: CigarBrand[] = [
   {
     id: 'quai-dorsay',
     name: 'Quai d\'Orsay',
-    logo: '/api/placeholder/300/300',
+    logo: '/images/brands/quai-dorsay-logo.png',
     description: 'Created for French market with lighter flavor profile.',
     heritage: 'Quai d\'Orsay is a relatively young brand, created in 1973 at the specific request of Valéry Giscard d\'Estaing, then France\'s Minister of Finance. The French state tobacco monopoly, SEITA, wanted a Cuban cigar with a lighter flavor profile to pair with French Champagne and cuisine. The brand is named after the famous Parisian avenue along the Seine where SEITA was headquartered.',
     country: 'Cuba',
@@ -202,7 +202,7 @@ export const brands: CigarBrand[] = [
   {
     id: 'diplomaticos',
     name: 'Diplomáticos',
-    logo: '/images/brands/diplomaticos-logo.jpg',
+    logo: '/images/brands/diplomaticos-logo.png',
     description: 'Slightly milder, more affordable version of Montecristo.',
     heritage: 'Created in 1966, the brand was conceived as a slightly milder, more affordable version of Montecristo, initially mirroring its numbered vitola lineup (No. 1 through No. 5). It is prized by aficionados for its nuanced, medium-bodied profile.',
     country: 'Cuba',
@@ -213,7 +213,7 @@ export const brands: CigarBrand[] = [
   {
     id: 'el-rey-del-mundo',
     name: 'El Rey del Mundo',
-    logo: '/images/brands/el-rey-del-mundo-logo.jpg',
+    logo: '/images/brands/el-rey-del-mundo-logo.png',
     description: 'The King of the World - elegant and complex.',
     heritage: 'With a name meaning "The King of the World," this brand was established in 1882 and was once one of the most expensive and prestigious cigars in the world. Today, it is known for a light to medium-bodied blend of great elegance and complexity, making it a connoisseur\'s choice.',
     country: 'Cuba',
@@ -246,7 +246,7 @@ export const brands: CigarBrand[] = [
   {
     id: 'la-flor-de-cano',
     name: 'La Flor de Cano',
-    logo: '/api/placeholder/300/300',
+    logo: '/images/brands/la-flor-de-cano-logo.png',
     description: 'Well-balanced, medium-bodied with excellent value.',
     heritage: 'A pre-revolution brand founded in 1884, known for a well-balanced, medium-bodied flavor profile. Its modern portfolio consists primarily of handmade, short-filler cigars that offer excellent value.',
     country: 'Cuba',
