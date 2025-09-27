@@ -76,11 +76,6 @@ export const Home = () => {
         </div>
         <div className="container mx-auto px-4 z-10">
           <div className="max-w-4xl mx-auto space-y-8 fade-in">
-            {/* Logo */}
-            <div className="flex justify-center">
-              <MokaLogo size="xl" className="animate-glow" />
-            </div>
-
             {/* Hero Text */}
             <div className="space-y-4">
               <h1 className="text-hero font-heading text-luxury">

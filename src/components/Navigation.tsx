@@ -37,7 +37,7 @@ export const Navigation = ({ onSearch }: NavigationProps) => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
-            <MokaLogo size="md" />
+            <MokaLogo size="xl" />
           </Link>
 
           {/* Desktop Navigation */}
