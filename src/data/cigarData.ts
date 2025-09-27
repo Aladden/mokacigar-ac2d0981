@@ -268,7 +268,7 @@ export const brands: CigarBrand[] = [
   {
     id: 'por-larranaga',
     name: 'Por Larrañaga',
-    logo: '/api/placeholder/300/300',
+    logo: '/images/brands/por-larranaga-logo.png',
     description: 'Oldest continuous brand with sweet, caramel notes.',
     heritage: 'Founded in 1834, this is the oldest Habanos brand still in continuous production. It has a well-earned reputation for consistency and a light to medium-bodied flavor profile characterized by distinctive sweet, caramel, and nutty notes.',
     country: 'Cuba',
@@ -279,7 +279,7 @@ export const brands: CigarBrand[] = [
   {
     id: 'rafael-gonzalez',
     name: 'Rafael González',
-    logo: '/images/brands/rafael-gonzalez-logo.jpg',
+    logo: '/images/brands/rafael-gonzalez-logo.png',
     description: 'Famous for introducing the Lonsdale vitola.',
     heritage: 'This brand was created in the 1930s and is famous for two historical contributions. First, it was the first brand to introduce the 6.5-inch by 42-ring-gauge Cervantes vitola under the name "Lonsdale," in honor of the British sporting Earl, Lord Lonsdale. Second, its boxes carry a curious English inscription advising that the cigars be smoked within one month or aged for a year.',
     country: 'Cuba',
@@ -290,7 +290,7 @@ export const brands: CigarBrand[] = [
   {
     id: 'saint-luis-rey',
     name: 'Saint Luis Rey',
-    logo: '/api/placeholder/300/300',
+    logo: '/images/brands/saint-luis-rey-logo.png',
     description: 'Originally created for the British market.',
     heritage: 'Established around 1940, the brand was originally created for the British market. It is known for a full-bodied flavor profile. Today, its portfolio has been reduced to a single regular production vitola, the Regios.',
     country: 'Cuba',
@@ -301,7 +301,7 @@ export const brands: CigarBrand[] = [
   {
     id: 'sancho-panza',
     name: 'Sancho Panza',
-    logo: '/api/placeholder/300/300',
+    logo: '/images/brands/sancho-panza-logo.png',
     description: 'Named after Don Quixote\'s companion.',
     heritage: 'Named after Sancho Panza, the faithful companion of Don Quixote in Cervantes\' classic novel. The brand is known for its mild to medium character, making it an excellent choice for newer cigar enthusiasts or those who prefer a gentler smoking experience.',
     country: 'Cuba',
