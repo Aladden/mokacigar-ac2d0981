@@ -38,89 +38,89 @@ export const brands: CigarBrand[] = [
     id: 'cohiba',
     name: 'Cohiba',
     logo: 'https://mokacigar.com/wp-content/uploads/2025/05/Cohiba_Logo_Gold_320x320_crop_center__1_-removebg-preview.png',
-    description: 'Cuba\'s most prestigious cigar brand, created exclusively for diplomatic gifts.',
-    heritage: 'Created in 1966 exclusively for President Fidel Castro and as a diplomatic gift for visiting heads of state and dignitaries. The tobacco undergoes an additional, third fermentation in barrels, a unique process that lends the blend an unparalleled smoothness. The name itself is the ancient Taíno word for the rolled tobacco leaves Columbus first saw.',
+    description: 'The most exclusive and aspirational cigar brand in the world.',
+    heritage: 'The name "Cohiba" is the Taino Indian word for the bunches of tobacco leaves that Christopher Columbus first saw the natives of Cuba smoking. Born in 1966, Cohiba\'s story is the stuff of legend. It began as the personal blend for Fidel Castro, crafted by a single roller, Eduardo Rivera. These cigars were reserved for Castro himself and as diplomatic gifts for heads of state and visiting dignitaries, wrapped in mystique and unavailability. The El Laguito factory, a beautiful mansion in Havana, became its home. The tobacco for Cohiba is selected from the finest five farms in the Vuelta Abajo region and undergoes a unique third fermentation in barrels, a process that adds unparalleled smoothness and a complex aroma. When Cohiba was finally released to the public in 1982, it instantly became a symbol of luxury, power, and the pinnacle of Cuban craftsmanship.',
     country: 'Cuba',
     founded: 1966,
     strength: 'Medium to Full',
-    flavourProfile: 'Complex and refined, with characteristic notes of grass, bean, and a creamy smoothness, evolving into richer leather and spice notes in the fuller-bodied expressions.'
+    flavourProfile: 'Complex and flavorful, with notes of grass, leather, and spice. The Behike line is known for its use of the rare "medio tiempo" leaf, offering a richer and more intense flavor.'
   },
   {
     id: 'montecristo',
     name: 'Montecristo',
     logo: 'https://mokacigar.com/wp-content/uploads/2025/05/Montecristo_Logo_Gold_320x320_crop_center-removebg-preview.png',
-    description: 'The most recognized Cuban cigar brand worldwide.',
-    heritage: 'Established in 1935, Montecristo is the best-selling and most recognized Habano brand in the world. Its name was inspired by Alexandre Dumas\'s novel The Count of Monte Cristo, a favorite story read aloud to the torcedores as they worked. The original portfolio consisted of just five numbered vitolas, from No. 1 to No. 5, which remain the core of the brand today.',
+    description: 'The quintessential Cuban cigar experience for many, a benchmark against which all others are measured.',
+    heritage: 'The story of Montecristo is a tale of literary inspiration and marketing genius. In 1935, Alonso Menéndez acquired a factory and, with his partner Pepe García, created a new brand. The name was inspired by a beloved tradition in the cigar factories: the lector, or reader, who would read novels to the rollers to break the monotony of their work. The favorite novel was Alexandre Dumas\' "The Count of Monte Cristo". Thus, "Montecristo" was born. The brand\'s iconic logo, a triangle of six swords surrounding a fleur-de-lis, was designed by its British distributor. Montecristo quickly captured the palates of smokers worldwide, with its classic No. 4 becoming the best-selling handmade cigar on the planet.',
     country: 'Cuba',
     founded: 1935,
     strength: 'Medium to Full',
-    flavourProfile: 'The quintessential Cuban profile, with notes of tangy wood, coffee, cocoa, and spice, often with a signature bittersweet note.'
+    flavourProfile: 'A classic Cuban profile with notes of coffee, cocoa, and vanilla, often with a spicy kick. The Edmundo line offers a heavier ring gauge and a richer flavor.'
   },
   {
     id: 'romeo-y-julieta',
     name: 'Romeo y Julieta',
     logo: 'https://mokacigar.com/wp-content/uploads/2025/05/Romeo_y_Julieta_Logo_Gold_320x320_crop_center-removebg-preview.png',
-    description: 'Romantic name, exceptional quality, beloved worldwide.',
-    heritage: 'Named for Shakespeare\'s tragic lovers, Romeo y Julieta was founded in 1875. The brand achieved international fame in the early 20th century under the direction of José "Pepin" Rodríguez Fernández, a promotional genius who traveled the world entering his horse, Julieta, in races and establishing the brand among the global elite. The brand is most famously associated with Sir Winston Churchill, who became a devoted aficionado during a visit to Havana.',
+    description: 'Named after Shakespeare\'s tragic lovers, Romeo y Julieta\'s story is one of romance and ambition.',
+    heritage: 'Named after Shakespeare\'s tragic lovers, Romeo y Julieta was founded in 1875 by Inocencio Alvarez and Manin Garcia. The brand truly blossomed under the ownership of José "Pepin" Rodriguez Fernández. A brilliant promoter, Rodriguez traveled the world, entering his horse "Julieta" in races and evangelizing his cigars. He even tried to buy the Palazzo Capuleti in Verona, the home of the literary Juliets. The brand\'s most famous devotee was Sir Winston Churchill. During a visit to Havana in 1946, his name was not only bestowed upon the brand\'s most famous vitola, a 7-inch by 47-ring-gauge cigar, but it became a generic term for that size. Today, smoking a Romeo y Julieta Churchill is to partake in a piece of history, an elegant and sophisticated smoke beloved by connoisseurs and world leaders alike.',
     country: 'Cuba',
     founded: 1875,
-    strength: 'Medium',
-    flavourProfile: 'A classic, aromatic, and balanced blend with a wide range of complex flavors, including floral, nutty, herbal, and cedar notes.'
+    strength: 'Light to Medium',
+    flavourProfile: 'A diverse range of flavors, often characterized by floral, nutty, and fruity notes with hints of cedar and spice.'
   },
   {
     id: 'partagas',
     name: 'Partagás',
     logo: 'https://mokacigar.com/wp-content/uploads/2025/05/Partagas_Logo_Gold_320x320_crop_center-removebg-preview.png',
-    description: 'Full-bodied cigars with complex flavours.',
-    heritage: 'Founded in 1845 by Don Jaime Partagás y Ravel, this is one of the oldest and most recognizable Havana brands. The Partagás factory in Havana is a landmark and one of the most famous in Cuba. Don Jaime is also credited with being one of the first factory owners to hire a lector to read to his cigar rollers as they worked, a tradition that continues to this day.',
+    description: 'The story of Partagás is as rich, dark, and intense as its cigars.',
+    heritage: 'Founded in 1845 by the Spanish-born Don Jaime Partagás y Ravelo, the brand is synonymous with power and deep flavor. Don Jaime was a formidable character who owned many of the best tobacco plantations in the Vuelta Abajo. His legendary Partagás factory, located behind the Capitol building in Havana, remains one of the city\'s most famous landmarks. Don Jaime was also a pioneer, experimenting with fermentation and aging techniques that are still used today. The brand\'s story has a dark twist; Don Jaime was murdered on one of his plantations in 1868, a mystery that has never been solved. His legacy is a cigar that is unapologetically robust and earthy, a true connoisseur\'s smoke that reflects the strength and passion of its founder.',
     country: 'Cuba',
     founded: 1845,
     strength: 'Full',
-    flavourProfile: 'Rich, intense, and earthy, with strong notes of pepper, leather, wood, and spice.'
+    flavourProfile: 'Rich and intense, with dominant notes of earth, leather, and black pepper.'
   },
   {
     id: 'h-upmann',
     name: 'H. Upmann',
     logo: 'https://mokacigar.com/wp-content/uploads/2025/05/H._UPMANN_Gold_5cf36aa4-8b37-464e-b761-7fd19af22ace_320x320_crop_center-removebg-preview.png',
-    description: 'Classic brand known for refined taste.',
-    heritage: 'Established in 1844 by German banker Hermann Upmann, who moved to Havana and established both a bank and a cigar factory. The bank failed in the 1920s, but the cigar brand endured, becoming one of the most respected in the world. The brand\'s boxes are famously adorned with the gold medals won at no fewer than eleven international exhibitions in the 19th century.',
+    description: 'The tale of H. Upmann begins not with a tobacco planter, but with a German banker.',
+    heritage: 'In 1844, Hermann Upmann arrived in Havana to work for an import/export company. A devoted cigar aficionado, he saw a business opportunity. He began sending cigars home to Europe, packaged in cedar boxes with his name on them. He soon founded both a bank and a cigar brand. His bank failed in the 1920s, but the cigar brand endured, becoming one of Cuba\'s most revered. A famous story claims that President John F. Kennedy, before signing the Cuban embargo in 1962, asked his press secretary, Pierre Salinger, to procure as many of his favorite H. Upmann Petit Upmanns as he could find. Salinger returned with 1,200 cigars, and only then did Kennedy sign the document, making them illegal. The brand remains a symbol of German precision and Cuban soul.',
     country: 'Cuba',
     founded: 1844,
     strength: 'Light to Medium',
-    flavourProfile: 'Elegant and subtle, with notes of cedar, leather, coffee, and a characteristic light spice.'
+    flavourProfile: 'Smooth and refined, with notes of cedar, nuts, and a hint of spice.'
   },
   {
     id: 'hoyo-de-monterrey',
     name: 'Hoyo de Monterrey',
     logo: '/api/placeholder/300/300',
-    description: 'Lighter-bodied, elegant, and aromatic profile.',
-    heritage: 'The Hoyo de Monterrey plantation, located in the fertile river valley of San Juan y Martínez in Vuelta Abajo, has been a source of legendary tobacco since at least 1860. José Gener, a Catalan, acquired the plantation and registered the brand name in 1865. The name literally means "the hole of Monterrey," referring to the low-lying position of the vega on the banks of the river.',
+    description: 'The name translates to "the hole of Monterrey," referring to a fertile, low-lying plantation.',
+    heritage: 'The name translates to "the hole of Monterrey," referring to a fertile, low-lying plantation on the banks of the San Juan y Martínez river in the heart of the Vuelta Abajo. In 1865, a Spanish immigrant named José Gener y Batet acquired this famous plantation and registered the brand. The gate at the entrance to the plantation still bears the inscription: "Hoyo de Monterrey. José Gener. 1860." Hoyo de Monterrey\'s story is one of subtlety and elegance. It appeals to those who appreciate a more delicate and aromatic smoke, a cigar that is complex without being overpowering. It became famous for its Double Corona, a benchmark of the size, and later for its Epicure series, which set the standard for a lighter, yet deeply flavorful, Cuban experience.',
     country: 'Cuba',
     founded: 1865,
     strength: 'Light',
-    flavourProfile: 'Delicate and aromatic, with complex notes of cream, cocoa, cedar, and a subtle sweetness.'
+    flavourProfile: 'Delicate and aromatic, with notes of cream, cedar, and a subtle sweetness. The Le Hoyo series offers a slightly fuller flavor.'
   },
   {
     id: 'trinidad',
     name: 'Trinidad',
     logo: '/api/placeholder/300/300',
-    description: 'Top-secret, state-only brand, more exclusive than Cohiba.',
-    heritage: 'Trinidad began its life in 1969 as a top-secret, state-only brand, produced at the legendary El Laguito factory alongside Cohiba. For decades, it was even more exclusive than Cohiba, reserved solely for Fidel Castro to give as gifts to foreign diplomats and dignitaries. It was not made available to the public until 1998, and even then, only in very limited quantities. The brand is distinguished by its unique "pigtail" cap.',
+    description: 'Much like Cohiba, Trinidad\'s origins are shrouded in diplomatic secrecy.',
+    heritage: 'Much like Cohiba, Trinidad\'s origins are shrouded in diplomatic secrecy. Named after the beautiful 16th-century city on Cuba\'s southern coast, the brand was officially founded in 1969. For years, its cigars, identifiable by their unique pigtail cap, were produced exclusively as gifts for foreign diplomats, even scarcer than the Cohibas of the time. The rumor was that Trinidad was an even better cigar than Cohiba, a blend so special it was never intended for public consumption. When it was finally released in 1998, it was in a single size, the Fundadores. It instantly became a legend, a symbol of Cuban elegance and exclusivity, known for its aromatic and complex character.',
     country: 'Cuba',
     founded: 1969,
     strength: 'Medium',
-    flavourProfile: 'Highly aromatic and complex, with a rich tapestry of flavors including coffee, vanilla, nuts, and a creamy, smooth finish.'
+    flavourProfile: 'Complex and aromatic, with notes of coffee, vanilla, and a creamy sweetness.'
   },
   {
     id: 'bolivar',
     name: 'Bolívar',
     logo: '/api/placeholder/300/300',
-    description: 'One of the strongest and most full-bodied Habanos.',
-    heritage: 'Named for Simón Bolívar, the 19th-century revolutionary who liberated much of South America from Spanish rule, this brand was established in 1902. True to its namesake, Bolívar has a reputation for being one of the strongest and most full-bodied Habanos. Its powerful, rich blend is not for the novice but is deeply rewarding for the experienced palate.',
+    description: 'Named for Simón Bolívar, the powerful 19th-century revolutionary who liberated much of South America.',
+    heritage: 'Named for Simón Bolívar, the powerful 19th-century revolutionary who liberated much of South America from Spanish rule, this brand is not for the faint of heart. Established in 1902 by the Rocha company, Bolívar cigars embody the strength and revolutionary spirit of their namesake. The brand\'s artwork, featuring the General\'s portrait, is as bold as its flavor. For decades, the Bolívar brand was virtually unknown outside of Cuba, a secret kept by the most discerning smokers. It is renowned for producing some of the strongest, most full-bodied cigars in the Habanos portfolio, particularly the legendary Belicosos Finos. To smoke a Bolívar is to experience the raw, untamed power of Cuban tobacco.',
     country: 'Cuba',
     founded: 1902,
     strength: 'Full',
-    flavourProfile: 'Robust and earthy, with pronounced notes of leather, spice, dark chocolate, and black pepper.'
+    flavourProfile: 'Rich and earthy, with notes of leather, coffee, and a distinct spiciness.'
   },
   {
     id: 'punch',
