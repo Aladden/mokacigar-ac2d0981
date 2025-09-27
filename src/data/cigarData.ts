@@ -37,7 +37,7 @@ export const brands: CigarBrand[] = [
   {
     id: 'cohiba',
     name: 'Cohiba',
-    logo: 'https://mokacigar.com/wp-content/uploads/2025/05/Cohiba_Logo_Gold_320x320_crop_center__1_-removebg-preview.png',
+    logo: '/images/brands/cohiba-logo.jpg',
     description: 'The most exclusive and aspirational cigar brand in the world.',
     heritage: 'The name "Cohiba" is the Taino Indian word for the bunches of tobacco leaves that Christopher Columbus first saw the natives of Cuba smoking. Born in 1966, Cohiba\'s story is the stuff of legend. It began as the personal blend for Fidel Castro, crafted by a single roller, Eduardo Rivera. These cigars were reserved for Castro himself and as diplomatic gifts for heads of state and visiting dignitaries, wrapped in mystique and unavailability. The El Laguito factory, a beautiful mansion in Havana, became its home. The tobacco for Cohiba is selected from the finest five farms in the Vuelta Abajo region and undergoes a unique third fermentation in barrels, a process that adds unparalleled smoothness and a complex aroma. When Cohiba was finally released to the public in 1982, it instantly became a symbol of luxury, power, and the pinnacle of Cuban craftsmanship.',
     country: 'Cuba',
@@ -81,7 +81,7 @@ export const brands: CigarBrand[] = [
   {
     id: 'h-upmann',
     name: 'H. Upmann',
-    logo: 'https://mokacigar.com/wp-content/uploads/2025/05/H._UPMANN_Gold_5cf36aa4-8b37-464e-b761-7fd19af22ace_320x320_crop_center-removebg-preview.png',
+    logo: '/images/brands/h-upmann-logo.jpg',
     description: 'The tale of H. Upmann begins not with a tobacco planter, but with a German banker.',
     heritage: 'In 1844, Hermann Upmann arrived in Havana to work for an import/export company. A devoted cigar aficionado, he saw a business opportunity. He began sending cigars home to Europe, packaged in cedar boxes with his name on them. He soon founded both a bank and a cigar brand. His bank failed in the 1920s, but the cigar brand endured, becoming one of Cuba\'s most revered. A famous story claims that President John F. Kennedy, before signing the Cuban embargo in 1962, asked his press secretary, Pierre Salinger, to procure as many of his favorite H. Upmann Petit Upmanns as he could find. Salinger returned with 1,200 cigars, and only then did Kennedy sign the document, making them illegal. The brand remains a symbol of German precision and Cuban soul.',
     country: 'Cuba',
@@ -114,7 +114,7 @@ export const brands: CigarBrand[] = [
   {
     id: 'bolivar',
     name: 'Bolívar',
-    logo: '/images/brands/bolivar-logo.png',
+    logo: '/images/brands/bolivar-logo.jpg',
     description: 'Named for Simón Bolívar, the powerful 19th-century revolutionary who liberated much of South America.',
     heritage: 'Named for Simón Bolívar, the powerful 19th-century revolutionary who liberated much of South America from Spanish rule, this brand is not for the faint of heart. Established in 1902 by the Rocha company, Bolívar cigars embody the strength and revolutionary spirit of their namesake. The brand\'s artwork, featuring the General\'s portrait, is as bold as its flavor. For decades, the Bolívar brand was virtually unknown outside of Cuba, a secret kept by the most discerning smokers. It is renowned for producing some of the strongest, most full-bodied cigars in the Habanos portfolio, particularly the legendary Belicosos Finos. To smoke a Bolívar is to experience the raw, untamed power of Cuban tobacco.',
     country: 'Cuba',
@@ -191,7 +191,7 @@ export const brands: CigarBrand[] = [
   {
     id: 'cuaba',
     name: 'Cuaba',
-    logo: '/api/placeholder/300/300',
+    logo: '/images/brands/cuaba-logo.jpg',
     description: 'Unique double perfecto shapes, pointed at both ends.',
     heritage: 'Launched in 1996, Cuaba holds a unique position in the Habanos portfolio: every cigar it produces is a figurado, specifically a double perfecto shape, pointed at both ends. This revives a style that was highly popular in the 19th century but had fallen out of fashion.',
     country: 'Cuba',
@@ -202,7 +202,7 @@ export const brands: CigarBrand[] = [
   {
     id: 'diplomaticos',
     name: 'Diplomáticos',
-    logo: '/api/placeholder/300/300',
+    logo: '/images/brands/diplomaticos-logo.jpg',
     description: 'Slightly milder, more affordable version of Montecristo.',
     heritage: 'Created in 1966, the brand was conceived as a slightly milder, more affordable version of Montecristo, initially mirroring its numbered vitola lineup (No. 1 through No. 5). It is prized by aficionados for its nuanced, medium-bodied profile.',
     country: 'Cuba',
@@ -213,7 +213,7 @@ export const brands: CigarBrand[] = [
   {
     id: 'el-rey-del-mundo',
     name: 'El Rey del Mundo',
-    logo: '/api/placeholder/300/300',
+    logo: '/images/brands/el-rey-del-mundo-logo.jpg',
     description: 'The King of the World - elegant and complex.',
     heritage: 'With a name meaning "The King of the World," this brand was established in 1882 and was once one of the most expensive and prestigious cigars in the world. Today, it is known for a light to medium-bodied blend of great elegance and complexity, making it a connoisseur\'s choice.',
     country: 'Cuba',
@@ -224,7 +224,7 @@ export const brands: CigarBrand[] = [
   {
     id: 'fonseca',
     name: 'Fonseca',
-    logo: '/api/placeholder/300/300',
+    logo: '/images/brands/fonseca-logo.jpg',
     description: 'Wrapped in white tissue paper, light and aromatic.',
     heritage: 'Founded in the 1890s by Don Francisco Fonseca, this brand is immediately recognizable by its unique tradition of wrapping each cigar in a delicate sheath of white tissue paper. The blend is characteristically light and aromatic, well-suited for pairing with lighter meals or for those new to Habanos.',
     country: 'Cuba',
@@ -279,7 +279,7 @@ export const brands: CigarBrand[] = [
   {
     id: 'rafael-gonzalez',
     name: 'Rafael González',
-    logo: '/api/placeholder/300/300',
+    logo: '/images/brands/rafael-gonzalez-logo.jpg',
     description: 'Famous for introducing the Lonsdale vitola.',
     heritage: 'This brand was created in the 1930s and is famous for two historical contributions. First, it was the first brand to introduce the 6.5-inch by 42-ring-gauge Cervantes vitola under the name "Lonsdale," in honor of the British sporting Earl, Lord Lonsdale. Second, its boxes carry a curious English inscription advising that the cigars be smoked within one month or aged for a year.',
     country: 'Cuba',
