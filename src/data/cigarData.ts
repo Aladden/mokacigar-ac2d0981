@@ -37,7 +37,7 @@ export const brands: CigarBrand[] = [
   {
     id: 'cohiba',
     name: 'Cohiba',
-    logo: '/images/brands/cohiba-logo.jpg',
+    logo: '/images/brands/cohiba-logo.png',
     description: 'The most exclusive and aspirational cigar brand in the world.',
     heritage: 'The name "Cohiba" is the Taino Indian word for the bunches of tobacco leaves that Christopher Columbus first saw the natives of Cuba smoking. Born in 1966, Cohiba\'s story is the stuff of legend. It began as the personal blend for Fidel Castro, crafted by a single roller, Eduardo Rivera. These cigars were reserved for Castro himself and as diplomatic gifts for heads of state and visiting dignitaries, wrapped in mystique and unavailability. The El Laguito factory, a beautiful mansion in Havana, became its home. The tobacco for Cohiba is selected from the finest five farms in the Vuelta Abajo region and undergoes a unique third fermentation in barrels, a process that adds unparalleled smoothness and a complex aroma. When Cohiba was finally released to the public in 1982, it instantly became a symbol of luxury, power, and the pinnacle of Cuban craftsmanship.',
     country: 'Cuba',
@@ -48,7 +48,7 @@ export const brands: CigarBrand[] = [
   {
     id: 'montecristo',
     name: 'Montecristo',
-    logo: 'https://mokacigar.com/wp-content/uploads/2025/05/Montecristo_Logo_Gold_320x320_crop_center-removebg-preview.png',
+    logo: '/images/brands/montecristo-logo.png',
     description: 'The quintessential Cuban cigar experience for many, a benchmark against which all others are measured.',
     heritage: 'The story of Montecristo is a tale of literary inspiration and marketing genius. In 1935, Alonso Menéndez acquired a factory and, with his partner Pepe García, created a new brand. The name was inspired by a beloved tradition in the cigar factories: the lector, or reader, who would read novels to the rollers to break the monotony of their work. The favorite novel was Alexandre Dumas\' "The Count of Monte Cristo". Thus, "Montecristo" was born. The brand\'s iconic logo, a triangle of six swords surrounding a fleur-de-lis, was designed by its British distributor. Montecristo quickly captured the palates of smokers worldwide, with its classic No. 4 becoming the best-selling handmade cigar on the planet.',
     country: 'Cuba',
@@ -59,7 +59,7 @@ export const brands: CigarBrand[] = [
   {
     id: 'romeo-y-julieta',
     name: 'Romeo y Julieta',
-    logo: 'https://mokacigar.com/wp-content/uploads/2025/05/Romeo_y_Julieta_Logo_Gold_320x320_crop_center-removebg-preview.png',
+    logo: '/images/brands/romeo-y-julieta-logo.png',
     description: 'Named after Shakespeare\'s tragic lovers, Romeo y Julieta\'s story is one of romance and ambition.',
     heritage: 'Named after Shakespeare\'s tragic lovers, Romeo y Julieta was founded in 1875 by Inocencio Alvarez and Manin Garcia. The brand truly blossomed under the ownership of José "Pepin" Rodriguez Fernández. A brilliant promoter, Rodriguez traveled the world, entering his horse "Julieta" in races and evangelizing his cigars. He even tried to buy the Palazzo Capuleti in Verona, the home of the literary Juliets. The brand\'s most famous devotee was Sir Winston Churchill. During a visit to Havana in 1946, his name was not only bestowed upon the brand\'s most famous vitola, a 7-inch by 47-ring-gauge cigar, but it became a generic term for that size. Today, smoking a Romeo y Julieta Churchill is to partake in a piece of history, an elegant and sophisticated smoke beloved by connoisseurs and world leaders alike.',
     country: 'Cuba',
@@ -70,7 +70,7 @@ export const brands: CigarBrand[] = [
   {
     id: 'partagas',
     name: 'Partagás',
-    logo: 'https://mokacigar.com/wp-content/uploads/2025/05/Partagas_Logo_Gold_320x320_crop_center-removebg-preview.png',
+    logo: '/images/brands/partagas-logo.png',
     description: 'The story of Partagás is as rich, dark, and intense as its cigars.',
     heritage: 'Founded in 1845 by the Spanish-born Don Jaime Partagás y Ravelo, the brand is synonymous with power and deep flavor. Don Jaime was a formidable character who owned many of the best tobacco plantations in the Vuelta Abajo. His legendary Partagás factory, located behind the Capitol building in Havana, remains one of the city\'s most famous landmarks. Don Jaime was also a pioneer, experimenting with fermentation and aging techniques that are still used today. The brand\'s story has a dark twist; Don Jaime was murdered on one of his plantations in 1868, a mystery that has never been solved. His legacy is a cigar that is unapologetically robust and earthy, a true connoisseur\'s smoke that reflects the strength and passion of its founder.',
     country: 'Cuba',
