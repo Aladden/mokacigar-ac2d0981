@@ -147,7 +147,7 @@ export const brands: CigarBrand[] = [
   {
     id: 'ramon-allones',
     name: 'Ramón Allones',
-    logo: '/api/placeholder/300/300',
+    logo: '/images/brands/ramon-allones-logo.png',
     description: 'Complex and intense full-bodied flavor.',
     heritage: 'Founded in 1837 by the Galician immigrant Ramón Allones, this is one of the oldest brands still in production. Ramón Allones is credited with a major industry innovation: he was the first manufacturer to pack his cigars in decorative boxes adorned with colorful, lithographed labels, pioneering the cigar packaging we know today.',
     country: 'Cuba',
@@ -169,7 +169,7 @@ export const brands: CigarBrand[] = [
   {
     id: 'quintero',
     name: 'Quintero',
-    logo: '/api/placeholder/300/300',
+    logo: '/images/brands/quintero-logo.png',
     description: 'Accessible entry point to Habanos with consistent quality.',
     heritage: 'Like José L. Piedra, Quintero is another brand that offers an accessible entry point to Habanos. It was founded in the southern city of Cienfugos in 1924 by Agustín Quintero and his brothers. All of its cigars are made with short-filler tobacco from the Vuelta Abajo and Semi-Vuelta regions and are known for their consistent quality and value.',
     country: 'Cuba',
@@ -180,7 +180,7 @@ export const brands: CigarBrand[] = [
   {
     id: 'vegueros',
     name: 'Vegueros',
-    logo: '/api/placeholder/300/300',
+    logo: '/images/brands/vegueros-logo.png',
     description: 'Tribute to tobacco farmers with distinctive presentation.',
     heritage: 'Introduced in 1996, Vegueros pays tribute to the generations of tobacco farmers (vegueros) who have cultivated tobacco in Pinar del Río. The brand was completely revamped in 2013 with a new image, new vitolas, and a distinctive presentation in 16-count metal tins. All vitolas are long-filler and handmade.',
     country: 'Cuba',
@@ -235,7 +235,7 @@ export const brands: CigarBrand[] = [
   {
     id: 'juan-lopez',
     name: 'Juan López',
-    logo: '/api/placeholder/300/300',
+    logo: '/images/brands/juan-lopez-logo.png',
     description: 'Small, highly-regarded brand with robust character.',
     heritage: 'A small, highly-regarded brand created in the 1870s by a Spanish businessman of the same name. It is a favorite among seasoned smokers who appreciate its robust, earthy, and complex medium-to-full-bodied profile and its excellent capacity for aging.',
     country: 'Cuba',
@@ -257,7 +257,7 @@ export const brands: CigarBrand[] = [
   {
     id: 'la-gloria-cubana',
     name: 'La Gloria Cubana',
-    logo: '/api/placeholder/300/300',
+    logo: '/images/brands/la-gloria-cubana-logo.png',
     description: 'Small but highly-prized with elegant profile.',
     heritage: 'Established in 1885, this is a small but highly-prized brand among connoisseurs. It is known for its elegant, medium-bodied cigars and excellent aging potential. Its slender panetela formats, the Médaille d\'Or No. 2 and No. 4, are legendary among collectors.',
     country: 'Cuba',
