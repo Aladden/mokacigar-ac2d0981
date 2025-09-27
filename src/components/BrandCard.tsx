@@ -23,10 +23,15 @@ export const BrandCard = ({ brand, className }: BrandCardProps) => {
             {/* Brand Logo */}
             <div className="w-24 h-24 rounded-full bg-gradient-card p-4 flex items-center justify-center border border-primary/20 group-hover:border-primary/40 transition-colors">
               <img 
-                src={brand.logo} 
+                src={`${brand.logo}?v=${Date.now()}`} 
                 alt={`${brand.name} logo`}
                 className="w-full h-full object-contain filter brightness-110"
+                onLoad={() => {
+                  console.log(`✅ Successfully loaded logo for ${brand.name}: ${brand.logo}`);
+                }}
                 onError={(e) => {
+                  console.error(`❌ Failed to load logo for ${brand.name}: ${brand.logo}`);
+                  console.log(`🔄 Falling back to placeholder for ${brand.name}`);
                   e.currentTarget.src = '/api/placeholder/150/150';
                 }}
               />
