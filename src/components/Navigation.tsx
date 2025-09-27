@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Search, Menu, X } from 'lucide-react';
+import { Search, Menu, X, Shield } from 'lucide-react';
 import { MokaLogo } from './MokaLogo';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { cn } from '@/lib/utils';
+import { useAuth } from '@/hooks/useAuth';
+import { useUserRole } from '@/hooks/useUserRole';
 
 interface NavigationProps {
   onSearch: (query: string) => void;
@@ -14,10 +16,12 @@ export const Navigation = ({ onSearch }: NavigationProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const location = useLocation();
+  const { user } = useAuth();
+  const { canManageContent } = useUserRole();
 
   const navigation = [
-    { name: 'Brands', href: '/' },
-    { name: 'Search', href: '/search' },
+    { name: 'Home', href: '/' },
+    { name: 'Brands', href: '/brands' },
     { name: 'About', href: '/about' },
   ];
 
@@ -56,6 +60,29 @@ export const Navigation = ({ onSearch }: NavigationProps) => {
                 {item.name}
               </Link>
             ))}
+            {user && canManageContent && (
+              <Link 
+                to="/admin" 
+                className={cn(
+                  "text-sm font-medium transition-colors hover:text-primary flex items-center space-x-1",
+                  location.pathname === "/admin" ? "text-primary" : "text-muted-foreground"
+                )}
+              >
+                <Shield className="h-4 w-4" />
+                <span>Admin</span>
+              </Link>
+            )}
+            {!user && (
+              <Link 
+                to="/auth" 
+                className={cn(
+                  "text-sm font-medium transition-colors hover:text-primary",
+                  location.pathname === "/auth" ? "text-primary" : "text-muted-foreground"
+                )}
+              >
+                Sign In
+              </Link>
+            )}
           </div>
 
           {/* Search Bar */}

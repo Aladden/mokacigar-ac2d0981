@@ -11,6 +11,8 @@ import { Brands } from "./pages/Brands";
 import { BrandDetail } from "./pages/BrandDetail";
 import { CigarDetail } from "./pages/CigarDetail";
 import { SearchPage } from "./pages/SearchPage";
+import { Auth } from "./pages/Auth";
+import { Admin } from "./pages/Admin";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -32,6 +34,8 @@ const AppContent = () => {
         <Route path="/brand/:brandId" element={<BrandDetail />} />
         <Route path="/cigar/:cigarId" element={<CigarDetail />} />
         <Route path="/search" element={<SearchPage />} />
+        <Route path="/auth" element={<Auth />} />
+        <Route path="/admin" element={<Admin />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
