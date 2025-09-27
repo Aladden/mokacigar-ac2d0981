@@ -612,7 +612,7 @@ export const cigars: Cigar[] = [
     strength: 'Medium to Full',
     description: 'The longest of the classic numbered series.',
     heritage: 'Part of the original five numbered vitolas from 1935.',
-    image: '/api/placeholder/400/600',
+    image: '/images/cigars/montecristo-no-1.jpg',
     pairings: { spirits: ['Cognac', 'Armagnac'] }
   },
   {
@@ -627,7 +627,7 @@ export const cigars: Cigar[] = [
     strength: 'Medium to Full',
     description: 'The classic torpedo that dominates this vitola.',
     heritage: 'Benchmark cigar in the Cuban industry, part of the original numbered series.',
-    image: '/api/placeholder/400/600',
+    image: '/images/cigars/montecristo-no-2.jpg',
     pairings: { spirits: ['Champagne', 'Port', 'Rum'] }
   },
   {
@@ -642,7 +642,7 @@ export const cigars: Cigar[] = [
     strength: 'Medium',
     description: 'Classic corona format showcasing Montecristo character.',
     heritage: 'Traditional vitola from the original lineup.',
-    image: '/api/placeholder/400/600',
+    image: '/images/cigars/montecristo-no-3.jpg',
     pairings: { spirits: ['Cognac', 'Armagnac'] }
   },
   {
@@ -657,7 +657,7 @@ export const cigars: Cigar[] = [
     strength: 'Medium',
     description: 'The most popular Montecristo, offering classic Cuban character.',
     heritage: 'From the original five numbered vitolas, this remains the bestseller.',
-    image: '/api/placeholder/400/600',
+    image: '/images/cigars/montecristo-no-4.jpg',
     pairings: { spirits: ['Beer', 'Red Wine'], cocktails: ['Gin & Tonic'] }
   },
   {
@@ -672,7 +672,7 @@ export const cigars: Cigar[] = [
     strength: 'Light to Medium',
     description: 'Smallest of the numbered series, perfect for a quick smoke.',
     heritage: 'The entry point to the classic Montecristo experience.',
-    image: '/api/placeholder/400/600',
+    image: '/images/cigars/montecristo-no-5.jpg',
     pairings: { wine: ['White Wine'], cocktails: ['Gin & Tonic'], coffee: ['Coffee'] }
   },
   {
@@ -687,7 +687,7 @@ export const cigars: Cigar[] = [
     strength: 'Medium to Full',
     description: 'The giant of the portfolio, for dedicated aficionados.',
     heritage: 'Ultimate expression of Montecristo in maximum format.',
-    image: '/api/placeholder/400/600',
+    image: '/images/cigars/montecristo-a.jpg',
     pairings: { spirits: ['Macallan 18-year-old Single Malt'] }
   },
   {
@@ -702,7 +702,7 @@ export const cigars: Cigar[] = [
     strength: 'Medium',
     description: 'Long and elegant panetela format.',
     heritage: 'Classic thin vitola for the refined palate.',
-    image: '/api/placeholder/400/600',
+    image: '/images/cigars/montecristo-tubos.jpg',
     pairings: { spirits: ['Cognac', 'Armagnac'] }
   },
   {
@@ -717,7 +717,7 @@ export const cigars: Cigar[] = [
     strength: 'Medium',
     description: 'Shorter panetela offering refined smoking experience.',
     heritage: 'Elegant alternative to the standard lineup.',
-    image: '/api/placeholder/400/600',
+    image: '/images/cigars/montecristo-tubos.jpg',
     pairings: { spirits: ['Cognac', 'Armagnac'] }
   },
   {
@@ -732,7 +732,7 @@ export const cigars: Cigar[] = [
     strength: 'Medium to Full',
     description: 'Modern addition offering fuller flavor in a comfortable size.',
     heritage: 'Named after the Count of Monte Cristo character, representing evolution.',
-    image: '/api/placeholder/400/600',
+    image: '/images/cigars/montecristo-edmundo.jpg',
     pairings: { wine: ['Red Wine'], cocktails: ['Negroni'], spirits: ['Cuban Rum'] }
   },
   {
@@ -747,7 +747,7 @@ export const cigars: Cigar[] = [
     strength: 'Medium to Full',
     description: 'Shorter Edmundo maintaining the character in less time.',
     heritage: 'Compact version of the popular Edmundo.',
-    image: '/api/placeholder/400/600',
+    image: '/images/cigars/montecristo-petit-edmundo.jpg',
     pairings: { wine: ['Red Wine'], cocktails: ['Negroni'], spirits: ['Cuban Rum'] }
   },
   {
@@ -762,7 +762,7 @@ export const cigars: Cigar[] = [
     strength: 'Medium to Full',
     description: 'Extended Edmundo format for longer enjoyment.',
     heritage: 'Longer expression of the modern Edmundo line.',
-    image: '/api/placeholder/400/600',
+    image: '/images/cigars/montecristo-double-edmundo.jpg',
     pairings: { wine: ['Red Wine'], cocktails: ['Negroni'], spirits: ['Cuban Rum'] }
   },
   {
@@ -777,7 +777,7 @@ export const cigars: Cigar[] = [
     strength: 'Medium to Full',
     description: 'Thickest Edmundo offering maximum body and flavor.',
     heritage: 'The robust member of the Edmundo family.',
-    image: '/api/placeholder/400/600',
+    image: '/images/cigars/montecristo-wide-edmundo.jpg',
     pairings: { wine: ['Red Wine'], cocktails: ['Negroni'], spirits: ['Cuban Rum'] }
   },
   {
@@ -792,7 +792,7 @@ export const cigars: Cigar[] = [
     strength: 'Medium to Full',
     description: 'Compact torpedo offering the No. 2 character in less time.',
     heritage: 'Modern interpretation of the classic No. 2.',
-    image: '/api/placeholder/400/600',
+    image: '/images/cigars/montecristo-petit-no-2.jpg',
     pairings: { wine: ['Red Wine'], cocktails: ['Negroni'], spirits: ['Cuban Rum'] }
   },
   {
@@ -807,7 +807,7 @@ export const cigars: Cigar[] = [
     strength: 'Light to Medium',
     description: 'Light and accessible format from the Open series.',
     heritage: 'Entry-level Montecristo designed for new smokers.',
-    image: '/api/placeholder/400/600',
+    image: '/images/cigars/montecristo-tubos.jpg',
     pairings: { spirits: ['Beer'], wine: ['White Wine'], coffee: ['Coffee'] }
   },
   {
@@ -822,7 +822,7 @@ export const cigars: Cigar[] = [
     strength: 'Medium',
     description: 'Robusto format from the accessible Open line.',
     heritage: 'Modern Montecristo for contemporary tastes.',
-    image: '/api/placeholder/400/600',
+    image: '/images/cigars/montecristo-open-master.jpg',
     pairings: { wine: ['Red Wine'], spirits: ['Armagnac', 'Beer'] }
   },
   {
@@ -837,7 +837,7 @@ export const cigars: Cigar[] = [
     strength: 'Medium',
     description: 'Mid-sized offering from the Open series.',
     heritage: 'Balanced format for everyday enjoyment.',
-    image: '/api/placeholder/400/600',
+    image: '/images/cigars/montecristo-open-regata.jpg',
     pairings: { spirits: ['Blonde Beer', 'Cognac'], cocktails: ['Cuba Libre'] }
   },
   {
@@ -852,8 +852,83 @@ export const cigars: Cigar[] = [
     strength: 'Medium',
     description: 'Largest of the Open series offering extended pleasure.',
     heritage: 'The premium Open format for longer sessions.',
-    image: '/api/placeholder/400/600',
+    image: '/images/cigars/montecristo-open-eagle.jpg',
     pairings: { wine: ['Red Wine'], spirits: ['Armagnac', 'Beer'] }
+  },
+  {
+    id: 'montecristo-open-j',
+    name: 'Open J',
+    brand: 'montecristo',
+    vitola: 'Petit Robusto',
+    length: 102,
+    ringGauge: 50,
+    smokingTime: '35-45 minutes',
+    flavourProfile: 'Medium',
+    strength: 'Medium',
+    description: 'Compact robusto from the accessible Open line.',
+    heritage: 'Modern addition to the Open series for shorter sessions.',
+    image: '/images/cigars/montecristo-open-j.jpg',
+    pairings: { spirits: ['Beer'], wine: ['White Wine'], coffee: ['Coffee'] }
+  },
+  {
+    id: 'montecristo-joyitas',
+    name: 'Joyitas',
+    brand: 'montecristo',
+    vitola: 'Petit Perlas',
+    length: 95,
+    ringGauge: 26,
+    smokingTime: '20-30 minutes',
+    flavourProfile: 'Light to Medium',
+    strength: 'Light to Medium',
+    description: 'Ultra-short premium format for quick enjoyment.',
+    heritage: 'Modern addition offering luxury in minimal time.',
+    image: '/images/cigars/montecristo-joyitas.jpg',
+    pairings: { spirits: ['Champagne'], wine: ['White Wine'], coffee: ['Espresso'] }
+  },
+  {
+    id: 'montecristo-linea-1935-dumas',
+    name: 'Línea 1935 Dumas',
+    brand: 'montecristo',
+    vitola: 'Dumas',
+    length: 130,
+    ringGauge: 49,
+    smokingTime: '50-65 minutes',
+    flavourProfile: 'Medium to Full',
+    strength: 'Medium to Full',
+    description: 'Limited edition celebrating Montecristo heritage.',
+    heritage: 'Special release honoring Alexandre Dumas and the brand\'s literary origins.',
+    image: '/images/cigars/montecristo-linea-1935-dumas.jpg',
+    pairings: { spirits: ['XO Cognac', 'Aged Rum'], wine: ['Vintage Red Wine'] }
+  },
+  {
+    id: 'montecristo-linea-1935-leyenda',
+    name: 'Línea 1935 Leyenda',
+    brand: 'montecristo',
+    vitola: 'Leyenda',
+    length: 165,
+    ringGauge: 55,
+    smokingTime: '70-90 minutes',
+    flavourProfile: 'Full',
+    strength: 'Full',
+    description: 'Premium limited edition with exceptional aging.',
+    heritage: 'Legendary format representing the pinnacle of Montecristo craftsmanship.',
+    image: '/images/cigars/montecristo-linea-1935-leyenda.jpg',
+    pairings: { spirits: ['Single Malt Whiskey', 'XO Cognac'], wine: ['Port Wine'] }
+  },
+  {
+    id: 'montecristo-linea-1935-maltes',
+    name: 'Línea 1935 Maltés',
+    brand: 'montecristo',
+    vitola: 'Maltés',
+    length: 153,
+    ringGauge: 53,
+    smokingTime: '65-80 minutes',
+    flavourProfile: 'Medium to Full',
+    strength: 'Medium to Full',
+    description: 'Elegant limited edition with refined complexity.',
+    heritage: 'Special vitola created for the 1935 anniversary series.',
+    image: '/images/cigars/montecristo-linea-1935-maltes.jpg',
+    pairings: { spirits: ['Armagnac', 'Premium Rum'], wine: ['Bordeaux'] }
   },
 
   // Romeo y Julieta Cigars
