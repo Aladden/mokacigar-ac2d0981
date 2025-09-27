@@ -944,7 +944,7 @@ export const cigars: Cigar[] = [
     strength: 'Medium',
     description: 'Named in honor of Sir Winston Churchill, the brand\'s most famous devotee.',
     heritage: 'Created to honor Churchill after his love affair with the brand began in Havana.',
-    image: '/api/placeholder/400/600',
+    image: '/images/cigars/romeo-y-julieta-churchill.jpg',
     pairings: { spirits: ['Blonde Beer', 'Champagne', 'Cognac'] }
   },
   {
@@ -974,7 +974,7 @@ export const cigars: Cigar[] = [
     strength: 'Medium',
     description: 'Thicker Churchill offering more body and complexity.',
     heritage: 'Modern evolution of the Churchill concept.',
-    image: '/api/placeholder/400/600',
+    image: '/images/cigars/romeo-y-julieta-wide-churchill.jpg',
     pairings: { wine: ['Rosé'], spirits: ['Champagne'] }
   },
   {
@@ -989,7 +989,7 @@ export const cigars: Cigar[] = [
     strength: 'Medium',
     description: 'Compact Churchill for shorter smoking sessions.',
     heritage: 'The Churchill experience in a convenient size.',
-    image: '/api/placeholder/400/600',
+    image: '/images/cigars/romeo-y-julieta-petit-churchill.jpg',
     pairings: { wine: ['Rosé'], spirits: ['Champagne'] }
   },
   {
@@ -1004,7 +1004,7 @@ export const cigars: Cigar[] = [
     strength: 'Medium',
     description: 'Small format offering quick Romeo y Julieta enjoyment.',
     heritage: 'Perfect for brief moments of luxury.',
-    image: '/api/placeholder/400/600',
+    image: '/images/cigars/romeo-y-julieta-petit-royales.jpg',
     pairings: { wine: ['Rosé'], spirits: ['Champagne'] }
   },
   {
@@ -1019,7 +1019,7 @@ export const cigars: Cigar[] = [
     strength: 'Medium',
     description: 'Torpedo format concentrating the brand\'s aromatic character.',
     heritage: 'Classic figurado showcasing Romeo y Julieta complexity.',
-    image: '/api/placeholder/400/600',
+    image: '/images/cigars/romeo-y-julieta-belicoso.jpg',
     pairings: { wine: ['Rosé'], spirits: ['Champagne'] }
   },
   {
@@ -1034,7 +1034,7 @@ export const cigars: Cigar[] = [
     strength: 'Medium',
     description: 'Classic corona gorda format showing the brand\'s balance.',
     heritage: 'Traditional vitola from the exhibition series.',
-    image: '/api/placeholder/400/600',
+    image: '/images/cigars/romeo-y-julieta-exhibition-no-4.jpg',
     pairings: { wine: ['Rosé'], spirits: ['Champagne'] }
   },
   {
@@ -1064,7 +1064,7 @@ export const cigars: Cigar[] = [
     strength: 'Light to Medium',
     description: 'Cedar-wrapped petit corona with enhanced aging.',
     heritage: 'Classic format with traditional cedar aging.',
-    image: '/api/placeholder/400/600',
+    image: '/images/cigars/romeo-y-julieta-cedros-de-luxe-no-3.jpg',
     pairings: { spirits: ['Blonde Beer', 'Champagne', 'Cognac'] }
   },
   {
@@ -1079,7 +1079,7 @@ export const cigars: Cigar[] = [
     strength: 'Light to Medium',
     description: 'Classic petit corona showcasing the brand\'s elegance.',
     heritage: 'Traditional format beloved for its balance.',
-    image: '/api/placeholder/400/600',
+    image: '/images/cigars/romeo-y-julieta-petit-coronas.jpg',
     pairings: { spirits: ['Blonde Beer', 'Champagne', 'Cognac'] }
   },
   {
@@ -1094,7 +1094,7 @@ export const cigars: Cigar[] = [
     strength: 'Light to Medium',
     description: 'Floral-named vitola celebrating the brand\'s romantic heritage.',
     heritage: 'Named for the thousand flowers, epitomizing romance.',
-    image: '/api/placeholder/400/600',
+    image: '/images/cigars/romeo-y-julieta-mille-fleurs.jpg',
     pairings: { spirits: ['Blonde Beer'], wine: ['White Wine', 'Lowland Whisky'] }
   },
   {
@@ -1154,7 +1154,7 @@ export const cigars: Cigar[] = [
     strength: 'Light',
     description: 'Delicate thin format named after Shakespeare\'s heroine.',
     heritage: 'Celebrating the romantic namesake of the brand.',
-    image: '/api/placeholder/400/600',
+    image: '/images/cigars/romeo-y-julieta-julietas.jpg',
     pairings: { wine: ['Rosé Wine'], cocktails: ['Gin & Tonic'], coffee: ['Tea'] }
   },
   {
@@ -1169,8 +1169,173 @@ export const cigars: Cigar[] = [
     strength: 'Light',
     description: 'Smallest Romeo y Julieta, perfect for brief interludes.',
     heritage: 'The most delicate expression of the brand.',
-    image: '/api/placeholder/400/600',
+    image: '/images/cigars/romeo-y-julieta-petit-julietas.jpg',
     pairings: { spirits: ['Beer'], wine: ['White Wine'], coffee: ['Tea'] }
+  },
+  {
+    id: 'romeo-y-julieta-cazadores',
+    name: 'Cazadores',
+    brand: 'romeo-y-julieta',
+    vitola: 'Cazadores',
+    length: 162,
+    ringGauge: 41,
+    smokingTime: '60-75 minutes',
+    flavourProfile: 'Medium',
+    strength: 'Medium',
+    description: 'Long corona format showcasing Romeo y Julieta\'s elegant character.',
+    heritage: 'Traditional long format beloved for its draw and burn.',
+    image: '/images/cigars/romeo-y-julieta-cazadores.jpg',
+    pairings: { spirits: ['Aged Rum', 'Cognac'], wine: ['Aged Red Wine'] }
+  },
+  {
+    id: 'romeo-y-julieta-churchill-anejados',
+    name: 'Churchill Añejados',
+    brand: 'romeo-y-julieta',
+    vitola: 'Julieta No. 2',
+    length: 178,
+    ringGauge: 47,
+    smokingTime: '75-90 minutes',
+    flavourProfile: 'Medium to Full',
+    strength: 'Medium to Full',
+    description: 'Aged Churchill format offering enhanced complexity and smoothness.',
+    heritage: 'Specially aged cigars honoring Winston Churchill\'s legacy with time-enhanced flavors.',
+    image: '/images/cigars/romeo-y-julieta-churchill-anejados.jpg',
+    pairings: { spirits: ['Premium Cognac', 'Aged Single Malt', 'Vintage Port'] }
+  },
+  {
+    id: 'romeo-y-julieta-club-kings',
+    name: 'Club Kings',
+    brand: 'romeo-y-julieta',
+    vitola: 'Club Kings',
+    length: 108,
+    ringGauge: 42,
+    smokingTime: '35-45 minutes',
+    flavourProfile: 'Medium',
+    strength: 'Medium',
+    description: 'Compact format perfect for shorter smoking sessions.',
+    heritage: 'Modern addition catering to contemporary smoking preferences.',
+    image: '/images/cigars/romeo-y-julieta-club-kings.jpg',
+    pairings: { spirits: ['Bourbon', 'Dark Rum'], cocktails: ['Old Fashioned'] }
+  },
+  {
+    id: 'romeo-y-julieta-no-1-tubos',
+    name: 'Romeo No. 1 Tubos',
+    brand: 'romeo-y-julieta',
+    vitola: 'Cremas',
+    length: 140,
+    ringGauge: 44,
+    smokingTime: '50-65 minutes',
+    flavourProfile: 'Medium',
+    strength: 'Medium',
+    description: 'Premium tube presentation protecting this elegant corona.',
+    heritage: 'Classic Romeo format enhanced with aluminum tube protection.',
+    image: '/images/cigars/romeo-y-julieta-no-1-tubos.jpg',
+    pairings: { spirits: ['Cognac', 'Aged Rum'], wine: ['Full-bodied Red Wine'] }
+  },
+  {
+    id: 'romeo-y-julieta-no-2-tubos',
+    name: 'Romeo No. 2 Tubos',
+    brand: 'romeo-y-julieta',
+    vitola: 'Petit Coronas',
+    length: 129,
+    ringGauge: 42,
+    smokingTime: '40-55 minutes',
+    flavourProfile: 'Medium',
+    strength: 'Medium',
+    description: 'Convenient tube format for the classic Romeo experience.',
+    heritage: 'Perfect travel companion in protective aluminum tube.',
+    image: '/images/cigars/romeo-y-julieta-no-2-tubos.jpg',
+    pairings: { spirits: ['Bourbon', 'Single Malt'], cocktails: ['Manhattan'] }
+  },
+  {
+    id: 'romeo-y-julieta-no-3-tubos',
+    name: 'Romeo No. 3 Tubos',
+    brand: 'romeo-y-julieta',
+    vitola: 'Coronitas',
+    length: 117,
+    ringGauge: 40,
+    smokingTime: '35-45 minutes',
+    flavourProfile: 'Medium',
+    strength: 'Medium',
+    description: 'Compact tube format for quick Romeo y Julieta enjoyment.',
+    heritage: 'Smaller format in protective tube for convenience.',
+    image: '/images/cigars/romeo-y-julieta-no-3.jpg',
+    pairings: { spirits: ['Dark Rum', 'Cognac'], coffee: ['Cuban Coffee'] }
+  },
+  {
+    id: 'romeo-y-julieta-petit-royales-tubos',
+    name: 'Petit Royales Tubos',
+    brand: 'romeo-y-julieta',
+    vitola: 'Caprichos',
+    length: 95,
+    ringGauge: 47,
+    smokingTime: '25-35 minutes',
+    flavourProfile: 'Medium',
+    strength: 'Medium',
+    description: 'Compact luxury in protective aluminum tube.',
+    heritage: 'Perfect travel companion for brief smoking moments.',
+    image: '/images/cigars/romeo-y-julieta-petit-royales-tubos.jpg',
+    pairings: { spirits: ['Premium Cognac', 'Aged Rum'], cocktails: ['Sazerac'] }
+  },
+  {
+    id: 'romeo-y-julieta-piramides-anejados',
+    name: 'Pirámides Añejados',
+    brand: 'romeo-y-julieta',
+    vitola: 'Pirámides',
+    length: 156,
+    ringGauge: 52,
+    smokingTime: '65-80 minutes',
+    flavourProfile: 'Medium to Full',
+    strength: 'Medium to Full',
+    description: 'Aged pyramid format offering enhanced complexity and smoothness.',
+    heritage: 'Specially aged pyramids showcasing the evolution of Romeo y Julieta\'s blend over time.',
+    image: '/images/cigars/romeo-y-julieta-piramides-anejados.jpg',
+    pairings: { spirits: ['Vintage Cognac', 'Aged Single Malt', 'Fine Port'], wine: ['Aged Bordeaux'] }
+  },
+  {
+    id: 'romeo-y-julieta-short-churchill',
+    name: 'Short Churchill',
+    brand: 'romeo-y-julieta',
+    vitola: 'Short Churchill',
+    length: 102,
+    ringGauge: 50,
+    smokingTime: '35-45 minutes',
+    flavourProfile: 'Medium',
+    strength: 'Medium',
+    description: 'Compact Churchill experience perfect for modern lifestyles.',
+    heritage: 'Contemporary interpretation of the Churchill legacy for shorter sessions.',
+    image: '/images/cigars/romeo-y-julieta-short-churchill.jpg',
+    pairings: { spirits: ['Bourbon', 'Dark Rum'], cocktails: ['Old Fashioned', 'Rum Punch'] }
+  },
+  {
+    id: 'romeo-y-julieta-short-churchill-tubos',
+    name: 'Short Churchill Tubos',
+    brand: 'romeo-y-julieta',
+    vitola: 'Short Churchill',
+    length: 102,
+    ringGauge: 50,
+    smokingTime: '35-45 minutes',
+    flavourProfile: 'Medium',
+    strength: 'Medium',
+    description: 'Short Churchill in protective aluminum tube for convenience.',
+    heritage: 'Modern Churchill format with premium tube presentation.',
+    image: '/images/cigars/romeo-y-julieta-short-churchill-tubos.jpg',
+    pairings: { spirits: ['Premium Bourbon', 'Aged Rum'], cocktails: ['Manhattan', 'Daiquiri'] }
+  },
+  {
+    id: 'romeo-y-julieta-wide-churchill-tubos',
+    name: 'Wide Churchill Tubos',
+    brand: 'romeo-y-julieta',
+    vitola: 'Montesco',
+    length: 155,
+    ringGauge: 55,
+    smokingTime: '65-80 minutes',
+    flavourProfile: 'Medium to Full',
+    strength: 'Medium to Full',
+    description: 'Wide Churchill in premium aluminum tube presentation.',
+    heritage: 'Modern Churchill format with enhanced protection and presentation.',
+    image: '/images/cigars/romeo-y-julieta-wide-churchill-tubos.jpg',
+    pairings: { spirits: ['Premium Cognac', 'Aged Single Malt', 'Fine Armagnac'] }
   },
 
   // Partagás Cigars
