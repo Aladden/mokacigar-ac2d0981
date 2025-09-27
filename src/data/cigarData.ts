@@ -550,7 +550,7 @@ export const cigars: Cigar[] = [
     strength: 'Full',
     description: 'The smallest BHK, featuring the rare Medio Tiempo leaf.',
     heritage: 'Pinnacle of Cuban craftsmanship with the most prized tobacco leaves.',
-    image: '/src/assets/cohiba-behike-52.jpg',
+    image: '/images/cigars/cohiba-behike-52.jpg',
     pairings: { spirits: ['Aged Rum', 'Scotch Whisky'], coffee: ['Robust Coffee'] }
   },
   {
