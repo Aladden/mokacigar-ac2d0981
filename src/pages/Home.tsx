@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Search, ArrowRight, Sparkles } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
@@ -7,9 +7,29 @@ import { Input } from '@/components/ui/input';
 import { BrandCard } from '@/components/BrandCard';
 import { brands, searchCigars } from '@/data/cigarData';
 import { MokaLogo } from '@/components/MokaLogo';
+import heroLibrary from '@/assets/hero-library.png';
+import heroRomeoBox from '@/assets/hero-romeo-box.jpg';
+import heroRomeoCigar from '@/assets/hero-romeo-cigar.jpg';
 
 export const Home = () => {
   const [searchQuery, setSearchQuery] = useState('');
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  const heroImages = [
+    heroLibrary,
+    heroRomeoBox, 
+    heroRomeoCigar
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => 
+        (prevIndex + 1) % heroImages.length
+      );
+    }, 5000); // Change image every 5 seconds
+
+    return () => clearInterval(interval);
+  }, [heroImages.length]);
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
@@ -23,14 +43,37 @@ export const Home = () => {
     <div className="min-h-screen">
       {/* Hero Section */}
       <section 
-        className="relative h-screen flex items-center justify-center text-center"
-        style={{
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url(/images/hero-cigars.jpg)`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundAttachment: 'fixed'
-        }}
+        className="relative h-screen flex items-center justify-center text-center overflow-hidden"
       >
+        {/* Dynamic Background Images */}
+        {heroImages.map((image, index) => (
+          <div
+            key={index}
+            className={`absolute inset-0 transition-opacity duration-1000 ${
+              index === currentImageIndex ? 'opacity-100' : 'opacity-0'
+            }`}
+            style={{
+              backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url(${image})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center'
+            }}
+          />
+        ))}
+        
+        {/* Image Indicators */}
+        <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 flex space-x-2 z-10">
+          {heroImages.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentImageIndex(index)}
+              className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                index === currentImageIndex 
+                  ? 'bg-primary scale-125' 
+                  : 'bg-primary/40 hover:bg-primary/60'
+              }`}
+            />
+          ))}
+        </div>
         <div className="container mx-auto px-4 z-10">
           <div className="max-w-4xl mx-auto space-y-8 fade-in">
             {/* Logo */}
