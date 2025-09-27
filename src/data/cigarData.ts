@@ -1358,16 +1358,21 @@ export const cigars: Cigar[] = [
     id: 'partagas-serie-d-no-4',
     name: 'Serie D No. 4',
     brand: 'partagas',
-    vitola: 'Robustos',
+    vitola: 'Robusto',
     length: 124,
     ringGauge: 50,
-    smokingTime: '45-60 minutes',
+    smokingTime: '50-60 minutes',
     flavourProfile: 'Full',
     strength: 'Full',
-    description: 'The flagship Partagás, offering intense Cuban flavor.',
-    heritage: 'Represents the quintessential Partagás experience in perfect proportion.',
-    image: '/api/placeholder/400/600',
-    pairings: { spirits: ['Islay Whisky', 'Rum'], coffee: ['Coffee'] }
+    description: 'The most popular vitola in the Partagás line, known for its perfect balance of strength and flavor. A benchmark robusto offering the full Don Jaime experience.',
+    heritage: 'Part of the prestigious Serie D line, representing the quintessential Partagás experience. This robusto format showcases the brand\'s legendary intensity in perfect proportion.',
+    image: '/images/cigars/partagas-serie-d-no-4.jpg',
+    pairings: {
+      spirits: ['Aged Rum', 'Cognac', 'Islay Whisky'],
+      wine: ['Cabernet Sauvignon', 'Barolo'],
+      cocktails: ['Old Fashioned', 'Sazerac'],
+      coffee: ['Dark Roast Coffee', 'Espresso']
+    }
   },
   {
     id: 'partagas-serie-d-no-5',
@@ -1388,31 +1393,41 @@ export const cigars: Cigar[] = [
     id: 'partagas-serie-d-no-6',
     name: 'Serie D No. 6',
     brand: 'partagas',
-    vitola: 'D No. 6',
+    vitola: 'Short Robusto',
     length: 90,
     ringGauge: 50,
-    smokingTime: '25-35 minutes',
+    smokingTime: '30-40 minutes',
     flavourProfile: 'Full',
     strength: 'Full',
-    description: 'Shortest D series offering quick but intense experience.',
-    heritage: 'Maximum power in minimum time.',
-    image: '/api/placeholder/400/600',
-    pairings: { spirits: ['Stout', 'Rum'], coffee: ['Espresso'] }
+    description: 'A concentrated dose of Partagás power in a short format. Delivers the full Serie D experience in half the time.',
+    heritage: 'The newest addition to the Serie D family, designed for those who want the full Partagás intensity in a shorter smoking time.',
+    image: '/images/cigars/partagas-serie-d-no-6.jpg',
+    pairings: {
+      spirits: ['Dark Rum', 'Bourbon', 'Armagnac'],
+      wine: ['Shiraz', 'Malbec'],
+      cocktails: ['Manhattan', 'Boulevardier'],
+      coffee: ['Cuban Coffee', 'Black Tea']
+    }
   },
   {
     id: 'partagas-serie-e-no-2',
     name: 'Serie E No. 2',
     brand: 'partagas',
-    vitola: 'Duke',
+    vitola: 'Robusto Extra',
     length: 140,
     ringGauge: 54,
     smokingTime: '55-70 minutes',
     flavourProfile: 'Full',
     strength: 'Full',
-    description: 'Thick gauge offering maximum body and flavor.',
-    heritage: 'The robust format for serious Partagás enthusiasts.',
-    image: '/api/placeholder/400/600',
-    pairings: { spirits: ['Champagne', 'Port', 'Rum'] }
+    description: 'Thick gauge offering maximum body and flavor concentration. The most robust format in the Serie E line.',
+    heritage: 'Part of the Serie E collection, designed for serious Partagás enthusiasts who appreciate maximum ring gauge intensity.',
+    image: '/images/cigars/partagas-serie-e-no-2.jpg',
+    pairings: {
+      spirits: ['Port', 'Aged Rum', 'Peated Whisky'],
+      wine: ['Barolo', 'Châteauneuf-du-Pape'],
+      cocktails: ['Negroni', 'Rusty Nail'],
+      coffee: ['Espresso', 'Dark Roast']
+    }
   },
   {
     id: 'partagas-serie-p-no-2',
@@ -1424,10 +1439,15 @@ export const cigars: Cigar[] = [
     smokingTime: '60-75 minutes',
     flavourProfile: 'Full',
     strength: 'Full',
-    description: 'Torpedo format intensifying Partagás\' legendary intensity.',
-    heritage: 'Showcases how the pyramid shape concentrates the powerful Partagás blend.',
-    image: '/api/placeholder/400/600',
-    pairings: { spirits: ['Port', 'Peated Whisky', 'Rum'] }
+    description: 'Torpedo format intensifying Partagás\' legendary intensity. The pyramid shape concentrates the powerful blend perfectly.',
+    heritage: 'Part of the prestigious Serie P line, showcasing how the pyramid shape concentrates the powerful Partagás blend into a sophisticated smoking experience.',
+    image: '/images/cigars/partagas-serie-p-no-2.jpg',
+    pairings: {
+      spirits: ['Port', 'Peated Whisky', 'Aged Rum'],
+      wine: ['Cabernet Sauvignon', 'Côtes du Rhône'],
+      cocktails: ['Sazerac', 'Boulevardier'],
+      coffee: ['Cuban Coffee', 'Dark Roast']
+    }
   },
   {
     id: 'partagas-8-9-8',
@@ -1439,10 +1459,15 @@ export const cigars: Cigar[] = [
     smokingTime: '65-80 minutes',
     flavourProfile: 'Full',
     strength: 'Full',
-    description: 'Classic lonsdale format named after traditional packing.',
-    heritage: 'Named for the 8-9-8 packing arrangement in the box.',
-    image: '/api/placeholder/400/600',
-    pairings: { spirits: ['Port', 'Islay Whisky', 'Rum'] }
+    description: 'Classic lonsdale format named after the traditional 8-9-8 packing arrangement in cedar boxes. A legendary vitola showcasing Partagás complexity.',
+    heritage: 'Named for the historic 8-9-8 packing arrangement (8 cigars on top, 9 in middle, 8 on bottom). This traditional format represents the classic Cuban cigar experience.',
+    image: '/images/cigars/partagas-8-9-8.jpg',
+    pairings: {
+      spirits: ['Port', 'Islay Whisky', 'Aged Rum'],
+      wine: ['Rioja', 'Brunello'],
+      cocktails: ['Old Fashioned', 'Manhattan'],
+      coffee: ['Café Cubano', 'Dark Roast']
+    }
   },
   {
     id: 'partagas-shorts',
@@ -1454,10 +1479,15 @@ export const cigars: Cigar[] = [
     smokingTime: '30-40 minutes',
     flavourProfile: 'Full',
     strength: 'Full',
-    description: 'Short format delivering concentrated Partagás character.',
-    heritage: 'Perfect for when time is limited but intensity is desired.',
-    image: '/api/placeholder/400/600',
-    pairings: { spirits: ['Port', 'Islay Whisky', 'Rum'] }
+    description: 'Short format delivering concentrated Partagás character in a quick smoke. Perfect for experienced palates seeking intensity.',
+    heritage: 'Designed for when time is limited but the full Partagás intensity is desired. A favorite among aficionados for its concentrated power.',
+    image: '/images/cigars/partagas-shorts.jpg',
+    pairings: {
+      spirits: ['Port', 'Islay Whisky', 'Dark Rum'],
+      wine: ['Shiraz', 'Zinfandel'],
+      cocktails: ['Manhattan', 'Sazerac'],
+      coffee: ['Espresso', 'Cuban Coffee']
+    }
   },
   {
     id: 'partagas-mille-fleurs',
@@ -1499,40 +1529,177 @@ export const cigars: Cigar[] = [
     smokingTime: '50-65 minutes',
     flavourProfile: 'Full',
     strength: 'Full',
-    description: 'Dark maduro wrapper enhancing Partagás intensity.',
-    heritage: 'Premium maduro expression of the brand\'s power.',
-    image: '/api/placeholder/400/600',
-    pairings: { spirits: ['Port', 'Islay Whisky', 'Rum'] }
+    description: 'Dark maduro wrapper enhancing Partagás intensity with sweet, rich notes. The fermented wrapper adds depth and complexity.',
+    heritage: 'Premium maduro expression combining the brand\'s legendary power with the sweetness of aged, fermented wrapper leaves.',
+    image: '/images/cigars/partagas-maduro-no-1.jpg',
+    pairings: {
+      spirits: ['Port', 'Aged Rum', 'Cognac'],
+      wine: ['Port Wine', 'Vintage Port'],
+      cocktails: ['Dark & Stormy', 'Rum Old Fashioned'],
+      coffee: ['Espresso', 'Dark Chocolate']
+    }
   },
   {
     id: 'partagas-maduro-no-2',
     name: 'Maduro No. 2',
     brand: 'partagas',
-    vitola: 'Short',
+    vitola: 'Short Torpedo',
     length: 120,
     ringGauge: 55,
     smokingTime: '45-55 minutes',
     flavourProfile: 'Full',
     strength: 'Full',
-    description: 'Thick maduro offering concentrated richness.',
-    heritage: 'Maximum ring gauge maduro for intense experience.',
-    image: '/api/placeholder/400/600',
-    pairings: { spirits: ['Port', 'Islay Whisky', 'Rum'] }
+    description: 'Thick maduro torpedo offering concentrated richness and complexity. The torpedo shape intensifies the maduro sweetness.',
+    heritage: 'Maximum ring gauge maduro format combining torpedo concentration with fermented wrapper richness for an intense experience.',
+    image: '/images/cigars/partagas-maduro-no-2.jpg',
+    pairings: {
+      spirits: ['Port', 'Aged Rum', 'Bourbon'],
+      wine: ['Tawny Port', 'Late Harvest'],
+      cocktails: ['Rum Manhattan', 'Boulevardier'],
+      coffee: ['Espresso', 'Dark Chocolate']
+    }
   },
   {
     id: 'partagas-maduro-no-3',
     name: 'Maduro No. 3',
     brand: 'partagas',
-    vitola: 'Maduro No. 3',
+    vitola: 'Corona Grande',
     length: 145,
     ringGauge: 50,
     smokingTime: '55-70 minutes',
     flavourProfile: 'Full',
     strength: 'Full',
-    description: 'Balanced maduro format with extended smoking time.',
-    heritage: 'Classic maduro proportions with Partagás intensity.',
-    image: '/api/placeholder/400/600',
-    pairings: { spirits: ['Port', 'Islay Whisky', 'Rum'] }
+    description: 'Balanced maduro format with extended smoking time. Classic proportions showcasing the marriage of Partagás intensity with maduro sweetness.',
+    heritage: 'Classic maduro proportions representing the perfect balance of Partagás power and fermented wrapper complexity.',
+    image: '/images/cigars/partagas-maduro-no-3.jpg',
+    pairings: {
+      spirits: ['Port', 'Aged Rum', 'Cognac'],
+      wine: ['Vintage Port', 'Madeira'],
+      cocktails: ['Rum Sazerac', 'Dark & Stormy'],
+      coffee: ['Cuban Coffee', 'Dark Chocolate']
+    }
+  },
+
+  // New Partagás Entries
+  {
+    id: 'partagas-corona-gorda-anejados',
+    name: 'Corona Gorda Añejados',
+    brand: 'partagas',
+    vitola: 'Corona Gorda',
+    length: 143,
+    ringGauge: 46,
+    smokingTime: '60-75 minutes',
+    flavourProfile: 'Full',
+    strength: 'Full',
+    description: 'Aged cigars from the premium Añejados line, offering exceptional complexity and refinement. These cigars have been aged to perfection.',
+    heritage: 'Part of the exclusive Añejados (aged) collection, representing the pinnacle of Cuban cigar aging. These cigars showcase how time enhances the legendary Partagás character.',
+    image: '/images/cigars/partagas-corona-gorda-anejados.jpg',
+    pairings: {
+      spirits: ['Vintage Port', 'XO Cognac', '25-Year Rum'],
+      wine: ['Barolo', 'Vintage Bordeaux'],
+      cocktails: ['Sazerac', 'Vieux Carré'],
+      coffee: ['Aged Coffee', 'Premium Espresso']
+    }
+  },
+  {
+    id: 'partagas-capitol',
+    name: 'Capitol',
+    brand: 'partagas',
+    vitola: 'Hermosos No. 4',
+    length: 142,
+    ringGauge: 52,
+    smokingTime: '50-60 minutes',
+    flavourProfile: 'Full',
+    strength: 'Full',
+    description: 'Named after Havana\'s Capitol building, this robusto format delivers classic Partagás intensity in perfect proportions.',
+    heritage: 'Named in honor of Havana\'s iconic Capitol building, representing the grand tradition of Cuban cigar making and the Partagás factory\'s prestigious location.',
+    image: '/images/cigars/partagas-capitol.jpg',
+    pairings: {
+      spirits: ['Dark Rum', 'Bourbon', 'Islay Whisky'],
+      wine: ['Cabernet Sauvignon', 'Malbec'],
+      cocktails: ['Mojito', 'Daiquiri'],
+      coffee: ['Cuban Coffee', 'Black Tea']
+    }
+  },
+  {
+    id: 'partagas-linea-maduro-no-2',
+    name: 'Línea Maduro No. 2',
+    brand: 'partagas',
+    vitola: 'Belicosos Finos',
+    length: 140,
+    ringGauge: 52,
+    smokingTime: '55-70 minutes',
+    flavourProfile: 'Full',
+    strength: 'Full',
+    description: 'Part of the exclusive Línea Maduro series, featuring dark fermented wrappers that add sweetness and complexity to the legendary Partagás blend.',
+    heritage: 'From the premium Línea Maduro collection, showcasing the art of maduro wrapper fermentation combined with the brand\'s legendary intensity.',
+    image: '/images/cigars/partagas-linea-maduro-no-2.jpg',
+    pairings: {
+      spirits: ['Aged Rum', 'Port', 'Cognac'],
+      wine: ['Port Wine', 'Late Harvest'],
+      cocktails: ['Dark & Stormy', 'Rum Punch'],
+      coffee: ['Espresso', 'Dark Chocolate']
+    }
+  },
+  {
+    id: 'partagas-linea-maduro-no-3',
+    name: 'Línea Maduro No. 3',
+    brand: 'partagas',
+    vitola: 'Coronas',
+    length: 142,
+    ringGauge: 42,
+    smokingTime: '50-65 minutes',
+    flavourProfile: 'Full',
+    strength: 'Full',
+    description: 'Classic corona format from the Línea Maduro series, balancing the brand\'s power with the sweetness of aged maduro wrapper.',
+    heritage: 'Part of the exclusive Línea Maduro collection, representing the perfect marriage of traditional Cuban vitola with premium maduro wrapper aging.',
+    image: '/images/cigars/partagas-linea-maduro-no-3.jpg',
+    pairings: {
+      spirits: ['Port', 'Aged Rum', 'Sherry'],
+      wine: ['Vintage Port', 'Madeira'],
+      cocktails: ['Rum Old Fashioned', 'Port Flip'],
+      coffee: ['Cuban Coffee', 'Café con Leche']
+    }
+  },
+  {
+    id: 'partagas-petit-coronas-especiales',
+    name: 'Petit Coronas Especiales',
+    brand: 'partagas',
+    vitola: 'Petit Coronas',
+    length: 129,
+    ringGauge: 42,
+    smokingTime: '30-40 minutes',
+    flavourProfile: 'Full',
+    strength: 'Full',
+    description: 'Traditional petit corona format offering accessible Partagás intensity in a shorter smoking time. Perfect introduction to the brand\'s power.',
+    heritage: 'Classic petit corona showcasing how Partagás maintains its legendary character even in smaller formats, making it accessible to all aficionados.',
+    image: '/images/cigars/partagas-petit-coronas-especiales.jpg',
+    pairings: {
+      spirits: ['Dark Rum', 'Bourbon', 'Port'],
+      wine: ['Rioja', 'Côtes du Rhône'],
+      cocktails: ['Mojito', 'Caipirinha'],
+      coffee: ['Cortado', 'Black Tea']
+    }
+  },
+  {
+    id: 'partagas-presidentes',
+    name: 'Presidentes',
+    brand: 'partagas',
+    vitola: 'Campanas',
+    length: 158,
+    ringGauge: 47,
+    smokingTime: '75-90 minutes',
+    flavourProfile: 'Full',
+    strength: 'Full',
+    description: 'Large torpedo format named for distinguished leaders. This premium vitola offers an extended journey through the full complexity of Partagás.',
+    heritage: 'Named in honor of great leaders, this impressive torpedo format represents the pinnacle of Partagás craftsmanship and intensity.',
+    image: '/images/cigars/partagas-presidentes.jpg',
+    pairings: {
+      spirits: ['XO Cognac', 'Aged Rum', 'Vintage Port'],
+      wine: ['Barolo', 'Châteauneuf-du-Pape'],
+      cocktails: ['Brandy Alexander', 'Vieux Carré'],
+      coffee: ['Aged Coffee', 'Premium Tea']
+    }
   },
 
   // H. Upmann Cigars
