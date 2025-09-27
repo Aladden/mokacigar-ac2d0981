@@ -43,7 +43,7 @@ export const Home = () => {
     <div className="min-h-screen">
       {/* Hero Section */}
       <section 
-        className="relative h-screen flex items-center justify-center text-center overflow-hidden"
+        className="relative h-screen flex items-end justify-center text-center overflow-hidden pb-32"
       >
         {/* Dynamic Background Images */}
         {heroImages.map((image, index) => (
