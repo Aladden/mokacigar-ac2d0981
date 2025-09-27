@@ -325,7 +325,7 @@ export const cigars: Cigar[] = [
     strength: 'Medium to Full',
     description: 'The flagship Churchill vitola of Cohiba, offering the full complexity of the blend.',
     heritage: 'Part of the original Línea Clásica, representing Cohiba\'s pinnacle of craftsmanship.',
-    image: '/api/placeholder/400/600',
+    image: '/images/cigars/cohiba-esplendidos.jpg',
     pairings: { spirits: ['Cognac', 'Single Malt Whiskey', 'Bourbon', 'Rum', 'Port'] }
   },
   {
@@ -340,7 +340,7 @@ export const cigars: Cigar[] = [
     strength: 'Medium to Full',
     description: 'The perfect balance of flavor and time in Cohiba\'s portfolio.',
     heritage: 'A cornerstone of the Línea Clásica, beloved by aficionados worldwide.',
-    image: '/api/placeholder/400/600',
+    image: '/images/cigars/cohiba-robustos.jpg',
     pairings: { spirits: ['Cuba Libre', 'LBV Port', 'Islay Whisky'], coffee: ['Coffee', 'Tea'] }
   },
   {
@@ -355,7 +355,7 @@ export const cigars: Cigar[] = [
     strength: 'Medium',
     description: 'Elegant long format showcasing Cohiba\'s refined character.',
     heritage: 'Classic Línea Clásica vitola for the discerning smoker.',
-    image: '/api/placeholder/400/600',
+    image: '/images/cigars/cohiba-coronas.jpg',
     pairings: { spirits: ['Orange Mango Sparkling Water', 'San Pellegrino'] }
   },
   {
@@ -370,7 +370,7 @@ export const cigars: Cigar[] = [
     strength: 'Light to Medium',
     description: 'Delicate and refined, perfect for a quick luxury smoke.',
     heritage: 'The thinnest Cohiba, showcasing the brand\'s finesse.',
-    image: '/api/placeholder/400/600',
+    image: '/images/cigars/cohiba-panetelas.jpg',
     pairings: { wine: ['Dry White Wine'], cocktails: ['Gin & Tonic'], coffee: ['Espresso'] }
   },
   {
@@ -385,7 +385,7 @@ export const cigars: Cigar[] = [
     strength: 'Medium',
     description: 'Slender format offering concentrated Cohiba flavor.',
     heritage: 'Perfect introduction to the Cohiba experience.',
-    image: '/api/placeholder/400/600',
+    image: '/images/cigars/cohiba-exquisitos.jpg',
     pairings: { cocktails: ['Gin & Tonic'], spirits: ['Bourbon'], coffee: ['Coffee', 'Espresso', 'Cognac', 'Whiskey'] }
   },
   {
@@ -400,7 +400,7 @@ export const cigars: Cigar[] = [
     strength: 'Medium to Full',
     description: 'Large torpedo format concentrating the blend\'s complexity.',
     heritage: 'Modern addition showcasing pyramid vitola mastery.',
-    image: '/api/placeholder/400/600',
+    image: '/images/cigars/cohiba-piramides-extra.jpg',
     pairings: { spirits: ['XO Cognac', 'Aged Rum'], cocktails: ['Old Fashioned'] }
   },
   {
@@ -415,7 +415,7 @@ export const cigars: Cigar[] = [
     strength: 'Medium',
     description: 'Smallest Siglo, perfect for a quick premium experience.',
     heritage: 'From the Línea 1492, celebrating Columbus\'s discovery.',
-    image: '/api/placeholder/400/600',
+    image: '/images/cigars/cohiba-siglo-i.jpg',
     pairings: { spirits: ['Beer'], cocktails: ['Mojito'], coffee: ['Espresso'] }
   },
   {
@@ -430,7 +430,7 @@ export const cigars: Cigar[] = [
     strength: 'Medium',
     description: 'Perfect introduction to Cohiba quality.',
     heritage: 'Most popular of the Siglo series.',
-    image: '/api/placeholder/400/600',
+    image: '/images/cigars/cohiba-siglo-ii.jpg',
     pairings: { spirits: ['Cognac'], coffee: ['Coffee'] }
   },
   {
@@ -445,7 +445,7 @@ export const cigars: Cigar[] = [
     strength: 'Medium',
     description: 'Extended smoking pleasure with Siglo character.',
     heritage: 'Elegant long format of the celebrated series.',
-    image: '/api/placeholder/400/600',
+    image: '/images/cigars/cohiba-siglo-iii.jpg',
     pairings: { coffee: ['Milky Coffee'], spirits: ['Cognac', 'Smoky Scotch'] }
   },
   {
@@ -460,7 +460,7 @@ export const cigars: Cigar[] = [
     strength: 'Medium',
     description: 'Thicker ring gauge offering more body and complexity.',
     heritage: 'The robust member of the Siglo family.',
-    image: '/api/placeholder/400/600',
+    image: '/images/cigars/cohiba-siglo-iv.jpg',
     pairings: { spirits: ['Single Malt Scotch'], coffee: ['Cappuccino'] }
   },
   {
@@ -475,7 +475,7 @@ export const cigars: Cigar[] = [
     strength: 'Medium',
     description: 'The largest of the Siglo series, offering extended smoking pleasure.',
     heritage: 'Represents the evolution of Cohiba\'s lighter line.',
-    image: '/api/placeholder/400/600',
+    image: '/images/cigars/cohiba-siglo-vi.jpg',
     pairings: { spirits: ['Champagne', 'XO Cognac', 'Cuban Rum'], coffee: ['Coffee', 'Tea'] }
   },
   {
@@ -490,7 +490,7 @@ export const cigars: Cigar[] = [
     strength: 'Medium',
     description: 'Short but thick, concentrating the Siglo blend.',
     heritage: 'Modern vitola combining convenience with luxury.',
-    image: '/api/placeholder/400/600',
+    image: '/images/cigars/cohiba-medio-siglo.jpg',
     pairings: { spirits: ['Champagne', 'Cognac', 'Rum'], coffee: ['Coffee', 'Tea', 'Whisky'] }
   },
   {
@@ -505,7 +505,7 @@ export const cigars: Cigar[] = [
     strength: 'Medium to Full',
     description: 'Dark maduro wrapper enhancing the blend\'s richness.',
     heritage: 'Part of the Línea Maduro, showcasing aged wrapper leaves.',
-    image: '/api/placeholder/400/600',
+    image: '/images/cigars/cohiba-secretos.jpg',
     pairings: { spirits: ['Cognac', 'Single Malt Whiskey', 'Bourbon', 'Rum', 'Port'] }
   },
   {
@@ -520,7 +520,7 @@ export const cigars: Cigar[] = [
     strength: 'Medium to Full',
     description: 'Robust maduro offering concentrated flavor.',
     heritage: 'Maduro line\'s popular robusto format.',
-    image: '/api/placeholder/400/600',
+    image: '/images/cigars/cohiba-secretos.jpg',
     pairings: { spirits: ['Single Malt Scotch'], coffee: ['Cappuccino'] }
   },
   {
@@ -535,7 +535,7 @@ export const cigars: Cigar[] = [
     strength: 'Medium to Full',
     description: 'The largest maduro format offering deep complexity.',
     heritage: 'Premium maduro for the serious aficionado.',
-    image: '/api/placeholder/400/600',
+    image: '/images/cigars/cohiba-genios.jpg',
     pairings: { spirits: ['Yellow Spot Irish Whisky'] }
   },
   {
@@ -550,7 +550,7 @@ export const cigars: Cigar[] = [
     strength: 'Full',
     description: 'The smallest BHK, featuring the rare Medio Tiempo leaf.',
     heritage: 'Pinnacle of Cuban craftsmanship with the most prized tobacco leaves.',
-    image: '/images/cigars/cohiba-behike-52.jpg',
+    image: '/images/cigars/cohiba-bhk-52.jpg',
     pairings: { spirits: ['Aged Rum', 'Scotch Whisky'], coffee: ['Robust Coffee'] }
   },
   {
@@ -565,7 +565,7 @@ export const cigars: Cigar[] = [
     strength: 'Full',
     description: 'Medium-sized Behike offering extended enjoyment.',
     heritage: 'Ultimate expression of Cuban cigar artistry.',
-    image: '/api/placeholder/400/600',
+    image: '/images/cigars/cohiba-bhk-54.jpg',
     pairings: { spirits: ['Crisp IPA'] }
   },
   {
@@ -580,8 +580,23 @@ export const cigars: Cigar[] = [
     strength: 'Full',
     description: 'The largest Behike, for the ultimate smoking experience.',
     heritage: 'The crown jewel of the Cohiba portfolio.',
-    image: '/api/placeholder/400/600',
+    image: '/images/cigars/cohiba-bhk-56.jpg',
     pairings: { spirits: ['Cognac', 'Single Malt Whiskey', 'Bourbon', 'Rum', 'Port'] }
+  },
+  {
+    id: 'cohiba-lancero',
+    name: 'Lancero',
+    brand: 'cohiba',
+    vitola: 'Lancero',
+    length: 192,
+    ringGauge: 38,
+    smokingTime: '75-90 minutes',
+    flavourProfile: 'Medium',
+    strength: 'Medium',
+    description: 'Elegant long format showcasing Cohiba\'s refined character in lancero vitola.',
+    heritage: 'Classic thin format for the discerning connoisseur.',
+    image: '/images/cigars/cohiba-lancero.jpg',
+    pairings: { spirits: ['Cognac', 'Armagnac'], wine: ['Dry White Wine'], coffee: ['Espresso'] }
   },
 
   // Montecristo Cigars
