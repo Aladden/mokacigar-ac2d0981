@@ -7,7 +7,6 @@ import { Input } from '@/components/ui/input';
 import { BrandCard } from '@/components/BrandCard';
 import { brands, searchCigars } from '@/data/cigarData';
 import { MokaLogo } from '@/components/MokaLogo';
-import heroImage from '@/assets/hero-cigars.jpg';
 
 export const Home = () => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -26,7 +25,7 @@ export const Home = () => {
       <section 
         className="relative h-screen flex items-center justify-center text-center"
         style={{
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url(${heroImage})`,
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url(/images/hero-cigars.jpg)`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundAttachment: 'fixed'

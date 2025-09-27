@@ -1,5 +1,4 @@
 import { cn } from "@/lib/utils";
-import mokaLogo from "@/assets/moka-logo.png";
 
 interface MokaLogoProps {
   className?: string;
@@ -17,7 +16,7 @@ export const MokaLogo = ({ className, size = 'md' }: MokaLogoProps) => {
   return (
     <div className={cn("flex items-center", className)}>
       <img 
-        src={mokaLogo} 
+        src="/images/brands/moka-logo.png" 
         alt="MokaCigar London" 
         className={cn(sizeClasses[size], "w-auto object-contain")}
       />

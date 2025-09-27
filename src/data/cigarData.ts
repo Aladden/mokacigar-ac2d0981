@@ -92,7 +92,7 @@ export const brands: CigarBrand[] = [
   {
     id: 'hoyo-de-monterrey',
     name: 'Hoyo de Monterrey',
-    logo: '/api/placeholder/300/300',
+    logo: '/images/brands/hoyo-de-monterrey-logo.png',
     description: 'The name translates to "the hole of Monterrey," referring to a fertile, low-lying plantation.',
     heritage: 'The name translates to "the hole of Monterrey," referring to a fertile, low-lying plantation on the banks of the San Juan y Martínez river in the heart of the Vuelta Abajo. In 1865, a Spanish immigrant named José Gener y Batet acquired this famous plantation and registered the brand. The gate at the entrance to the plantation still bears the inscription: "Hoyo de Monterrey. José Gener. 1860." Hoyo de Monterrey\'s story is one of subtlety and elegance. It appeals to those who appreciate a more delicate and aromatic smoke, a cigar that is complex without being overpowering. It became famous for its Double Corona, a benchmark of the size, and later for its Epicure series, which set the standard for a lighter, yet deeply flavorful, Cuban experience.',
     country: 'Cuba',
@@ -103,7 +103,7 @@ export const brands: CigarBrand[] = [
   {
     id: 'trinidad',
     name: 'Trinidad',
-    logo: '/api/placeholder/300/300',
+    logo: '/images/brands/trinidad-logo.png',
     description: 'Much like Cohiba, Trinidad\'s origins are shrouded in diplomatic secrecy.',
     heritage: 'Much like Cohiba, Trinidad\'s origins are shrouded in diplomatic secrecy. Named after the beautiful 16th-century city on Cuba\'s southern coast, the brand was officially founded in 1969. For years, its cigars, identifiable by their unique pigtail cap, were produced exclusively as gifts for foreign diplomats, even scarcer than the Cohibas of the time. The rumor was that Trinidad was an even better cigar than Cohiba, a blend so special it was never intended for public consumption. When it was finally released in 1998, it was in a single size, the Fundadores. It instantly became a legend, a symbol of Cuban elegance and exclusivity, known for its aromatic and complex character.',
     country: 'Cuba',
@@ -114,7 +114,7 @@ export const brands: CigarBrand[] = [
   {
     id: 'bolivar',
     name: 'Bolívar',
-    logo: '/api/placeholder/300/300',
+    logo: '/images/brands/bolivar-logo.png',
     description: 'Named for Simón Bolívar, the powerful 19th-century revolutionary who liberated much of South America.',
     heritage: 'Named for Simón Bolívar, the powerful 19th-century revolutionary who liberated much of South America from Spanish rule, this brand is not for the faint of heart. Established in 1902 by the Rocha company, Bolívar cigars embody the strength and revolutionary spirit of their namesake. The brand\'s artwork, featuring the General\'s portrait, is as bold as its flavor. For decades, the Bolívar brand was virtually unknown outside of Cuba, a secret kept by the most discerning smokers. It is renowned for producing some of the strongest, most full-bodied cigars in the Habanos portfolio, particularly the legendary Belicosos Finos. To smoke a Bolívar is to experience the raw, untamed power of Cuban tobacco.',
     country: 'Cuba',
