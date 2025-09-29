@@ -16,7 +16,7 @@ export const Navigation = ({ onSearch }: NavigationProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const location = useLocation();
-  const { user } = useAuth();
+  const { user, signOut } = useAuth();
   const { canManageContent } = useUserRole();
 
   const navigation = [
@@ -45,7 +45,7 @@ export const Navigation = ({ onSearch }: NavigationProps) => {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-6">
             {navigation.map((item) => (
               <Link
                 key={item.name}
@@ -72,7 +72,16 @@ export const Navigation = ({ onSearch }: NavigationProps) => {
                 <span>Admin</span>
               </Link>
             )}
-            {!user && (
+            {user ? (
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={() => signOut()}
+                className="text-sm font-medium text-muted-foreground hover:text-primary"
+              >
+                Sign Out
+              </Button>
+            ) : (
               <Link 
                 to="/auth" 
                 className={cn(
@@ -135,6 +144,47 @@ export const Navigation = ({ onSearch }: NavigationProps) => {
                   {item.name}
                 </Link>
               ))}
+              
+              {/* Mobile Admin Link */}
+              {user && canManageContent && (
+                <Link 
+                  to="/admin" 
+                  className={cn(
+                    "text-sm font-medium transition-colors hover:text-primary flex items-center space-x-1 px-2 py-1",
+                    location.pathname === "/admin" ? "text-primary" : "text-muted-foreground"
+                  )}
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  <Shield className="h-4 w-4" />
+                  <span>Admin</span>
+                </Link>
+              )}
+
+              {/* Mobile Auth */}
+              {user ? (
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={() => {
+                    signOut();
+                    setIsMenuOpen(false);
+                  }}
+                  className="text-sm font-medium text-muted-foreground hover:text-primary justify-start px-2"
+                >
+                  Sign Out
+                </Button>
+              ) : (
+                <Link 
+                  to="/auth" 
+                  className={cn(
+                    "text-sm font-medium transition-colors hover:text-primary px-2 py-1",
+                    location.pathname === "/auth" ? "text-primary" : "text-muted-foreground"
+                  )}
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Sign In
+                </Link>
+              )}
               
               {/* Mobile Search */}
               <form onSubmit={handleSearchSubmit} className="flex items-center space-x-2">
