@@ -349,26 +349,152 @@ export const Encyclopedia = () => {
               )}
             </TabsContent>
 
-            {/* Other tabs will be implemented in subsequent phases */}
+            {/* Brands Tab */}
             <TabsContent value="brands" className="mt-8">
-              <div className="text-center py-16">
-                <h2 className="font-heading text-2xl font-semibold text-primary mb-4">
-                  Brands Section Coming Soon
-                </h2>
-                <p className="text-muted-foreground">
-                  Complete brand directory with detailed brand pages and heritage stories.
-                </p>
+              <div className="mb-6 flex items-center justify-between">
+                <div>
+                  <h2 className="font-heading text-2xl font-semibold text-primary">
+                    All Cuban Cigar Brands
+                  </h2>
+                  <p className="text-muted-foreground mt-1">
+                    Explore {filteredBrands.length} legendary Cuban cigar brands
+                  </p>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <Button
+                    variant={viewMode === 'grid' ? 'default' : 'outline'}
+                    size="sm"
+                    onClick={() => setViewMode('grid')}
+                  >
+                    <Grid3X3 className="h-4 w-4" />
+                  </Button>
+                  <Button
+                    variant={viewMode === 'list' ? 'default' : 'outline'}
+                    size="sm"
+                    onClick={() => setViewMode('list')}
+                  >
+                    <List className="h-4 w-4" />
+                  </Button>
+                </div>
+              </div>
+
+              {/* Brand Status Filter */}
+              <div className="mb-6 flex flex-wrap gap-2">
+                <Button
+                  variant={!filters.status ? 'default' : 'outline'}
+                  size="sm"
+                  onClick={() => handleFiltersChange({ ...filters, status: undefined })}
+                >
+                  All Brands
+                </Button>
+                <Button
+                  variant={filters.status === 'global' ? 'default' : 'outline'}
+                  size="sm"
+                  onClick={() => handleFiltersChange({ ...filters, status: 'global' })}
+                >
+                  Global ({enhancedBrands.filter(b => b.status === 'global').length})
+                </Button>
+                <Button
+                  variant={filters.status === 'multi-regional' ? 'default' : 'outline'}
+                  size="sm"
+                  onClick={() => handleFiltersChange({ ...filters, status: 'multi-regional' })}
+                >
+                  Multi-Regional ({enhancedBrands.filter(b => b.status === 'multi-regional').length})
+                </Button>
+                <Button
+                  variant={filters.status === 'regional' ? 'default' : 'outline'}
+                  size="sm"
+                  onClick={() => handleFiltersChange({ ...filters, status: 'regional' })}
+                >
+                  Regional ({enhancedBrands.filter(b => b.status === 'regional').length})
+                </Button>
+                <Button
+                  variant={filters.status === 'discontinued' ? 'default' : 'outline'}
+                  size="sm"
+                  onClick={() => handleFiltersChange({ ...filters, status: 'discontinued' })}
+                >
+                  Discontinued ({enhancedBrands.filter(b => b.status === 'discontinued').length})
+                </Button>
+              </div>
+
+              <div className={viewMode === 'grid' 
+                ? "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+                : "space-y-4"
+              }>
+                {filteredBrands.map((brand) => (
+                  <BrandCard key={brand.id} brand={brand} />
+                ))}
               </div>
             </TabsContent>
 
+            {/* Cigars Tab */}
             <TabsContent value="cigars" className="mt-8">
-              <div className="text-center py-16">
-                <h2 className="font-heading text-2xl font-semibold text-primary mb-4">
-                  Cigars Section Coming Soon
-                </h2>
-                <p className="text-muted-foreground">
-                  Comprehensive cigar database with detailed specifications and reviews.
-                </p>
+              <div className="mb-6 flex items-center justify-between">
+                <div>
+                  <h2 className="font-heading text-2xl font-semibold text-primary">
+                    All Cuban Cigars
+                  </h2>
+                  <p className="text-muted-foreground mt-1">
+                    Browse {filteredCigars.length} unique Cuban cigar vitolas
+                  </p>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <Button
+                    variant={viewMode === 'grid' ? 'default' : 'outline'}
+                    size="sm"
+                    onClick={() => setViewMode('grid')}
+                  >
+                    <Grid3X3 className="h-4 w-4" />
+                  </Button>
+                  <Button
+                    variant={viewMode === 'list' ? 'default' : 'outline'}
+                    size="sm"
+                    onClick={() => setViewMode('list')}
+                  >
+                    <List className="h-4 w-4" />
+                  </Button>
+                </div>
+              </div>
+
+              {/* Quick Filters */}
+              <div className="mb-6 flex flex-wrap gap-2">
+                <Button
+                  variant={!filters.productionStatus ? 'default' : 'outline'}
+                  size="sm"
+                  onClick={() => handleFiltersChange({ ...filters, productionStatus: undefined })}
+                >
+                  All Cigars
+                </Button>
+                <Button
+                  variant={filters.productionStatus === 'current' ? 'default' : 'outline'}
+                  size="sm"
+                  onClick={() => handleFiltersChange({ ...filters, productionStatus: 'current' })}
+                >
+                  Current ({enhancedCigars.filter(c => c.productionStatus === 'current').length})
+                </Button>
+                <Button
+                  variant={filters.productionStatus === 'discontinued' ? 'default' : 'outline'}
+                  size="sm"
+                  onClick={() => handleFiltersChange({ ...filters, productionStatus: 'discontinued' })}
+                >
+                  Discontinued ({enhancedCigars.filter(c => c.productionStatus === 'discontinued').length})
+                </Button>
+                <Button
+                  variant={filters.releaseType === 'limited_edition' ? 'default' : 'outline'}
+                  size="sm"
+                  onClick={() => handleFiltersChange({ ...filters, releaseType: filters.releaseType === 'limited_edition' ? undefined : 'limited_edition' })}
+                >
+                  Limited Editions ({enhancedCigars.filter(c => c.isLimited).length})
+                </Button>
+              </div>
+
+              <div className={viewMode === 'grid' 
+                ? "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+                : "space-y-4"
+              }>
+                {filteredCigars.map((cigar) => (
+                  <CigarCard key={cigar.id} cigar={cigar} />
+                ))}
               </div>
             </TabsContent>
 

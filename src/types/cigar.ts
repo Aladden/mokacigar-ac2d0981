@@ -1,7 +1,7 @@
 // Enhanced type definitions for the MokaCigar Encyclopedia
 // Based on comprehensive Cuban cigar database structure
 
-export type BrandStatus = 'global' | 'portfolio' | 'regional' | 'discontinued' | 'limited' | 'pre-revolution' | 'exclusive';
+export type BrandStatus = 'global' | 'multi-regional' | 'portfolio' | 'regional' | 'discontinued' | 'limited' | 'pre-revolution' | 'exclusive';
 export type ReleaseType = 'standard' | 'limited_edition' | 'regional_edition' | 'reserva' | 'gran_reserva' | 'anejados' | 'festival' | 'anniversary' | 'lcdh';
 export type FactoryCode = 'EL' | 'JLP' | 'BM' | 'FPG' | 'H' | 'HM' | 'LF' | 'PM' | 'RP' | 'other';
 

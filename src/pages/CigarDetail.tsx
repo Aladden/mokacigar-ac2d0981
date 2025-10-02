@@ -1,14 +1,14 @@
 import { useParams, Link } from 'react-router-dom';
-import { ArrowLeft, Clock, Ruler, Target, Wine, Coffee, Star } from 'lucide-react';
+import { ArrowLeft, Clock, Ruler, Target, Wine, Coffee, Star, Calendar, Package } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { cigars, getBrandById } from '@/data/cigarData';
+import { enhancedCigars, enhancedBrands } from '@/data/enhancedCigarData';
 
 export const CigarDetail = () => {
   const { cigarId } = useParams<{ cigarId: string }>();
-  const cigar = cigars.find(c => c.id === cigarId);
-  const brand = cigar ? getBrandById(cigar.brand) : undefined;
+  const cigar = enhancedCigars.find(c => c.id === cigarId);
+  const brand = cigar ? enhancedBrands.find(b => b.id === cigar.brand) : undefined;
 
   if (!cigar || !brand) {
     return (
@@ -23,13 +23,13 @@ export const CigarDetail = () => {
     );
   }
 
-  const getFlavourColor = (flavour: string) => {
-    switch (flavour) {
-      case 'Light': return 'bg-blue-500/20 text-blue-400 border-blue-500/30';
-      case 'Light to Medium': return 'bg-cyan-500/20 text-cyan-400 border-cyan-500/30';
-      case 'Medium': return 'bg-yellow-500/20 text-yellow-400 border-yellow-500/30';
-      case 'Medium to Full': return 'bg-orange-500/20 text-orange-400 border-orange-500/30';
-      case 'Full': return 'bg-red-500/20 text-red-400 border-red-500/30';
+  const getStrengthColor = (strength: string) => {
+    switch (strength.toLowerCase()) {
+      case 'mild': return 'bg-blue-500/20 text-blue-400 border-blue-500/30';
+      case 'mild-medium': return 'bg-cyan-500/20 text-cyan-400 border-cyan-500/30';
+      case 'medium': return 'bg-yellow-500/20 text-yellow-400 border-yellow-500/30';
+      case 'medium-full': return 'bg-orange-500/20 text-orange-400 border-orange-500/30';
+      case 'full': return 'bg-red-500/20 text-red-400 border-red-500/30';
       default: return 'bg-primary/20 text-primary border-primary/30';
     }
   };
@@ -86,9 +86,19 @@ export const CigarDetail = () => {
               <h1 className="text-4xl font-heading font-bold text-luxury">
                 {cigar.name}
               </h1>
-              <Badge variant="outline" className="text-sm border-primary/30">
-                {cigar.vitola}
-              </Badge>
+              <div className="flex flex-wrap gap-2">
+                <Badge variant="outline" className="text-sm border-primary/30">
+                  {cigar.vitola}
+                </Badge>
+                {cigar.isLimited && (
+                  <Badge variant="default" className="text-sm">
+                    Limited Edition
+                  </Badge>
+                )}
+                <Badge variant="secondary" className="text-sm capitalize">
+                  {cigar.productionStatus}
+                </Badge>
+              </div>
             </div>
 
             {/* Specifications */}
@@ -97,7 +107,7 @@ export const CigarDetail = () => {
                 <CardTitle className="text-xl font-heading">Specifications</CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
-                <div className="grid grid-cols-3 gap-4">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                   <div className="text-center space-y-2">
                     <Ruler className="h-6 w-6 mx-auto text-primary" />
                     <div className="text-2xl font-bold text-primary">{cigar.length}mm</div>
@@ -115,17 +125,28 @@ export const CigarDetail = () => {
                     </div>
                     <div className="text-sm text-muted-foreground">Smoking Time</div>
                   </div>
+                  {cigar.launchYear && (
+                    <div className="text-center space-y-2">
+                      <Calendar className="h-6 w-6 mx-auto text-primary" />
+                      <div className="text-2xl font-bold text-primary">{cigar.launchYear}</div>
+                      <div className="text-sm text-muted-foreground">Launch Year</div>
+                    </div>
+                  )}
                 </div>
 
-                <div className="border-t border-primary/20 pt-4">
-                  <div className="flex justify-center">
+                <div className="border-t border-primary/20 pt-4 space-y-3">
+                  <div className="flex justify-center gap-3">
                     <Badge 
                       variant="outline" 
-                      className={`text-lg px-4 py-2 ${getFlavourColor(cigar.flavourProfile)}`}
+                      className={`text-lg px-4 py-2 ${getStrengthColor(cigar.strength)}`}
                     >
                       <Star className="mr-2 h-4 w-4" />
-                      {cigar.flavourProfile}
+                      {cigar.strength}
                     </Badge>
+                  </div>
+                  <div className="text-center">
+                    <p className="text-sm text-muted-foreground">Flavor Profile</p>
+                    <p className="text-base text-primary font-medium">{cigar.flavourProfile}</p>
                   </div>
                 </div>
               </CardContent>
@@ -143,20 +164,26 @@ export const CigarDetail = () => {
               </CardContent>
             </Card>
 
-            {/* Heritage Story */}
-            <Card className="glass border-primary/20">
-              <CardHeader>
-                <CardTitle className="text-xl font-heading">Heritage Story</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-lg leading-relaxed">
-                  {cigar.heritage}
-                </p>
-              </CardContent>
-            </Card>
+            {/* Tasting Notes */}
+            {cigar.tastingNotes && cigar.tastingNotes.length > 0 && (
+              <Card className="glass border-primary/20">
+                <CardHeader>
+                  <CardTitle className="text-xl font-heading">Tasting Notes</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="flex flex-wrap gap-2">
+                    {cigar.tastingNotes.map((note, index) => (
+                      <Badge key={index} variant="secondary" className="text-sm">
+                        {note}
+                      </Badge>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            )}
 
             {/* Pairings */}
-            {(cigar.pairings.spirits || cigar.pairings.wine || cigar.pairings.coffee || cigar.pairings.cocktails) && (
+            {cigar.pairings && (cigar.pairings.spirits || cigar.pairings.wine || cigar.pairings.coffee || cigar.pairings.cocktails) && (
               <Card className="glass border-primary/20">
                 <CardHeader>
                   <CardTitle className="text-xl font-heading">Perfect Pairings</CardTitle>
