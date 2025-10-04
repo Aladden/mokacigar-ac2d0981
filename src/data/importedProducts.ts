@@ -1,0 +1,131 @@
+/**
+ * All imported products from Moka Product Import Template
+ * Organized by brand in the MokaCigar Encyclopedia format
+ */
+
+import { CigarVitola } from '@/types/cigar';
+
+export const importedCohiba: CigarVitola[] = [
+  {
+    id: 'cohiba-lanceros',
+    name: 'Lanceros',
+    brand: 'cohiba',
+    vitola: 'Laguito No. 1',
+    length: 192,
+    lengthInches: 7.56,
+    ringGauge: 38,
+    smokingTime: '60-75 minutes',
+    flavourProfile: 'Medium to Full',
+    strength: 'Medium to Full',
+    description: 'Cohiba Lanceros - Premium Cuban cigar with authentic flavor profile',
+    heritage: 'Part of the Linea Clasica collection',
+    tastingNotes: ['Cedar', 'Leather', 'Coffee', 'Cream', 'Honey'],
+    image: '/images/cigars/cohiba-lanceros.jpg',
+    releaseType: 'standard',
+    isDiscontinued: false,
+    isLimited: false,
+    productionStatus: 'current',
+    packaging: [{ type: 'box', count: 25 }],
+    pairings: { spirits: ['Cognac', 'Dark Rum', 'Single Malt Whisky', 'Aged Bourbon'], wine: [], coffee: [], cocktails: [] },
+    rarity: 'common'
+  },
+  {
+    id: 'cohiba-esplendidos-varnished-box',
+    name: 'Esplendidos',
+    brand: 'cohiba',
+    vitola: 'Julieta No. 2',
+    length: 178,
+    lengthInches: 7.0,
+    ringGauge: 47,
+    smokingTime: '60-75 minutes',
+    flavourProfile: 'Medium to Full',
+    strength: 'Medium to Full',
+    description: 'Cohiba Esplendidos - Varnished Box - Premium Cuban cigar with authentic flavor profile',
+    heritage: 'Part of the Linea Clasica collection',
+    tastingNotes: ['Cedar', 'Leather', 'Coffee', 'Cream', 'Honey'],
+    image: '/images/cigars/cohiba-esplendidos.jpg',
+    releaseType: 'standard',
+    isDiscontinued: false,
+    isLimited: false,
+    productionStatus: 'current',
+    packaging: [{ type: 'box', count: 25 }],
+    pairings: { spirits: ['Cognac', 'Dark Rum', 'Single Malt Whisky', 'Aged Bourbon'], wine: [], coffee: [], cocktails: [] },
+    rarity: 'common'
+  },
+  {
+    id: 'cohiba-piramides-extra',
+    name: 'Piramides Extra',
+    brand: 'cohiba',
+    vitola: 'Piramide',
+    length: 160,
+    lengthInches: 6.3,
+    ringGauge: 54,
+    smokingTime: '60-75 minutes',
+    flavourProfile: 'Medium to Full',
+    strength: 'Medium to Full',
+    description: 'Cohiba Piramides Extra - Premium Cuban cigar with authentic flavor profile',
+    heritage: 'Part of the Linea Clasica collection',
+    tastingNotes: ['Cedar', 'Leather', 'Coffee', 'Cream', 'Honey'],
+    image: '/images/cigars/cohiba-piramides-extra.jpg',
+    releaseType: 'standard',
+    isDiscontinued: false,
+    isLimited: false,
+    productionStatus: 'current',
+    packaging: [{ type: 'box', count: 10 }],
+    pairings: { spirits: ['Cognac', 'Dark Rum', 'Single Malt Whisky', 'Aged Bourbon'], wine: [], coffee: [], cocktails: [] },
+    rarity: 'common'
+  },
+  {
+    id: 'cohiba-esplendidos',
+    name: 'Esplendidos',
+    brand: 'cohiba',
+    vitola: 'Julieta No. 2',
+    length: 178,
+    lengthInches: 7.0,
+    ringGauge: 47,
+    smokingTime: '60-75 minutes',
+    flavourProfile: 'Medium to Full',
+    strength: 'Medium to Full',
+    description: 'Cohiba Esplendidos - Premium Cuban cigar with authentic flavor profile',
+    heritage: 'Part of the Linea Clasica collection',
+    tastingNotes: ['Cedar', 'Leather', 'Coffee', 'Cream', 'Honey'],
+    image: '/images/cigars/cohiba-esplendidos.jpg',
+    releaseType: 'standard',
+    isDiscontinued: false,
+    isLimited: false,
+    productionStatus: 'current',
+    packaging: [{ type: 'box', count: 25 }],
+    pairings: { spirits: ['Cognac', 'Dark Rum', 'Single Malt Whisky', 'Aged Bourbon'], wine: [], coffee: [], cocktails: [] },
+    rarity: 'common'
+  },
+  {
+    id: 'cohiba-piramides-extra',
+    name: 'Piramides Extra',
+    brand: 'cohiba',
+    vitola: 'Piramide',
+    length: 160,
+    lengthInches: 6.3,
+    ringGauge: 54,
+    smokingTime: '60-75 minutes',
+    flavourProfile: 'Medium to Full',
+    strength: 'Medium to Full',
+    description: 'Cohiba Piramides Extra - Premium Cuban cigar with authentic flavor profile',
+    heritage: 'Part of the Linea Clasica collection',
+    tastingNotes: ['Cedar', 'Leather', 'Coffee', 'Cream', 'Honey'],
+    image: '/images/cigars/cohiba-piramides-extra.jpg',
+    releaseType: 'standard',
+    isDiscontinued: false,
+    isLimited: false,
+    productionStatus: 'current',
+    packaging: [{ type: 'box', count: 10 }],
+    pairings: { spirits: ['Cognac', 'Dark Rum', 'Single Malt Whisky', 'Aged Bourbon'], wine: [], coffee: [], cocktails: [] },
+    rarity: 'common'
+  },
+  // Add other brands as needed
+];
+
+// Export combined data
+export const allImportedProducts: CigarVitola[] = [
+  ...importedCohiba,
+  // Add other brands as needed
+];

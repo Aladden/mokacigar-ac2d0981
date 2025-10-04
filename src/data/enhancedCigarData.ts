@@ -107,8 +107,12 @@ export const enhancedBrands: CigarBrand[] = [
   // More brands will be added in phases
 ];
 
+// Import all products from the Moka Product Import
+import { allMokaProducts } from './allMokaProducts';
+
 // ==== ENHANCED CIGAR VITOLAS ====
-export const enhancedCigars: CigarVitola[] = [
+// Combining manually curated data with imported products
+const manualCigars: CigarVitola[] = [
   {
     id: 'cohiba-behike-52',
     name: 'Behike 52',
@@ -257,6 +261,9 @@ export const enhancedCigars: CigarVitola[] = [
   }
   // More cigars will be added in phases
 ];
+
+// Combine manual cigars with imported products
+export const enhancedCigars: CigarVitola[] = [...manualCigars, ...allMokaProducts];
 
 // ==== SPECIAL RELEASES ====
 export const specialReleases: SpecialRelease[] = [
