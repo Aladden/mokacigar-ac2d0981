@@ -14,6 +14,8 @@ import { SearchPage } from "./pages/SearchPage";
 import { Auth } from "./pages/Auth";
 import { Admin } from "./pages/Admin";
 import NotFound from "./pages/NotFound";
+import MokaHome from "./pages/MokaHome";
+import MokaBrandPage from "./pages/MokaBrandPage";
 
 const queryClient = new QueryClient();
 
@@ -25,13 +27,14 @@ const AppContent = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-hero">
-      <Navigation onSearch={handleSearch} />
+    <div className="min-h-screen" style={{ backgroundColor: '#000000' }}>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<MokaHome />} />
+        <Route path="/brand/:brandName" element={<MokaBrandPage />} />
+        <Route path="/old-home" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/brands" element={<Brands />} />
-        <Route path="/brand/:brandId" element={<BrandDetail />} />
+        <Route path="/old-brand/:brandId" element={<BrandDetail />} />
         <Route path="/cigar/:cigarId" element={<CigarDetail />} />
         <Route path="/search" element={<SearchPage />} />
         <Route path="/auth" element={<Auth />} />
