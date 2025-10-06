@@ -2,6 +2,7 @@
 
 import { MokaCigarProduct, ProcessedCigar, BrandGroup } from '@/types/mokaCigar';
 import mokaDataset from '@/data/mokacigar_dataset.json';
+import { getBrandPDF } from '@/data/brandPDFs';
 
 // Process raw dataset into usable format
 export function processCigarData(data: MokaCigarProduct[]): ProcessedCigar[] {
@@ -57,6 +58,7 @@ export function groupCigarsByBrand(cigars: ProcessedCigar[]): BrandGroup[] {
       cigars,
       cigarCount: cigars.length,
       description: `Premium ${name} cigars from Cuba`,
+      pdfUrl: getBrandPDF(name),
     }))
     .sort((a, b) => a.name.localeCompare(b.name));
 }

@@ -43,4 +43,5 @@ export interface BrandGroup {
   cigarCount: number;
   logo?: string;
   description?: string;
+  pdfUrl?: string;
 }
