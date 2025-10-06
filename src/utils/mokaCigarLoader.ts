@@ -5,39 +5,41 @@ import mokaDataset from '@/data/mokacigar_dataset.json';
 
 // Process raw dataset into usable format
 export function processCigarData(data: MokaCigarProduct[]): ProcessedCigar[] {
-  return data.map((item, index) => {
-    // Parse image URLs (could be comma-separated)
-    const imageUrls = item.image_urls
-      ? item.image_urls.split(',').map(url => url.trim())
-      : [];
+  return data
+    .filter(item => item.Brand && item.Name) // Skip items with null Brand or Name
+    .map((item, index) => {
+      // Parse image URLs (could be comma-separated)
+      const imageUrls = item.image_urls
+        ? item.image_urls.split(',').map(url => url.trim())
+        : [];
 
-    // Generate unique ID from brand and name
-    const id = `${item.Brand.toLowerCase().replace(/\s+/g, '-')}-${index}`;
+      // Generate unique ID from brand and name
+      const id = `${item.Brand.toLowerCase().replace(/\s+/g, '-')}-${index}`;
 
-    // Normalize intensity to string
-    const intensity = typeof item.Intensity === 'number' 
-      ? `${item.Intensity}/5` 
-      : item.Intensity || 'Not specified';
+      // Normalize intensity to string
+      const intensity = typeof item.Intensity === 'number' 
+        ? `${item.Intensity}/5` 
+        : item.Intensity || 'Not specified';
 
-    return {
-      id,
-      brand: item.Brand,
-      name: item.Name,
-      description: item.Description,
-      package: item.Package,
-      tobaccoRegion: item["Tobacco Region"],
-      shapeFormat: item["Shape Format"],
-      intensity,
-      cigarBody: item["Cigar Body"],
-      enjoymentTime: item["Enjoyment Time"],
-      taste: item.Taste,
-      ringGauge: item["Ring Gauge"],
-      imageUrls,
-      pdfUrl: item.pdf_url,
-      backgroundColor: '#000000',
-      borderColor: '#B79E59',
-    };
-  });
+      return {
+        id,
+        brand: item.Brand,
+        name: item.Name,
+        description: item.Description || '',
+        package: item.Package || 0,
+        tobaccoRegion: item["Tobacco Region"] || 'Cuba',
+        shapeFormat: item["Shape Format"],
+        intensity,
+        cigarBody: item["Cigar Body"] || 0,
+        enjoymentTime: item["Enjoyment Time"],
+        taste: item.Taste,
+        ringGauge: item["Ring Gauge"],
+        imageUrls,
+        pdfUrl: item.pdf_url || '',
+        backgroundColor: '#000000',
+        borderColor: '#B79E59',
+      };
+    });
 }
 
 // Group cigars by brand
