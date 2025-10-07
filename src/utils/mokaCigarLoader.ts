@@ -4,14 +4,23 @@ import { MokaCigarProduct, ProcessedCigar, BrandGroup } from '@/types/mokaCigar'
 import mokaDataset from '@/data/mokacigar_dataset.json';
 import { getBrandPDF } from '@/data/brandPDFs';
 
+const GITHUB_BASE_URL = 'https://raw.githubusercontent.com/Aladden/mokacigar-ac2d0981/main/public';
+
 // Process raw dataset into usable format
 export function processCigarData(data: MokaCigarProduct[]): ProcessedCigar[] {
   return data
     .filter(item => item.Brand && item.Name) // Skip items with null Brand or Name
     .map((item, index) => {
-      // Parse image URLs (could be comma-separated)
+      // Parse image URLs (could be comma-separated) and convert relative to absolute
       const imageUrls = item.image_urls
-        ? item.image_urls.split(',').map(url => url.trim())
+        ? item.image_urls.split(',').map(url => {
+            const trimmedUrl = url.trim();
+            // Convert relative URLs to absolute GitHub URLs
+            if (trimmedUrl.startsWith('/')) {
+              return `${GITHUB_BASE_URL}${trimmedUrl}`;
+            }
+            return trimmedUrl;
+          })
         : [];
 
       // Generate unique ID from brand and name
