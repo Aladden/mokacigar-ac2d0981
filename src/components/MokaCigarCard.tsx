@@ -3,6 +3,7 @@
 import { ExternalLink } from 'lucide-react';
 import { ProcessedCigar } from '@/types/mokaCigar';
 import { Button } from './ui/button';
+import { useState } from 'react';
 import {
   Carousel,
   CarouselContent,
@@ -11,13 +12,49 @@ import {
   CarouselPrevious,
 } from './ui/carousel';
 
+const GITHUB_BASE_URL = 'https://raw.githubusercontent.com/Aladden/mokacigar-ac2d0981/main/public/images/cigars';
+
+// Generate fallback image URLs with different variations
+const generateImageFallbacks = (cigarName: string): string[] => {
+  const normalized = cigarName.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]/g, '');
+  return [
+    `${GITHUB_BASE_URL}/${normalized}.jpg`,
+    `${GITHUB_BASE_URL}/${normalized}.jpeg`,
+    `${GITHUB_BASE_URL}/${cigarName.toLowerCase().replace(/\s+/g, '-')}.jpg`,
+    `${GITHUB_BASE_URL}/${cigarName.toLowerCase().replace(/\s+/g, '-')}.jpeg`,
+  ];
+};
+
 interface MokaCigarCardProps {
   cigar: ProcessedCigar;
   className?: string;
 }
 
 export function MokaCigarCard({ cigar, className = '' }: MokaCigarCardProps) {
+  const [imageErrors, setImageErrors] = useState<Map<number, number>>(new Map());
   const hasMultipleImages = cigar.imageUrls.length > 1;
+
+  const handleImageError = (idx: number, currentUrl: string) => {
+    const currentAttempt = imageErrors.get(idx) || 0;
+    const fallbacks = generateImageFallbacks(cigar.name);
+    
+    // Try fallbacks if we haven't exhausted them
+    if (currentAttempt < fallbacks.length) {
+      setImageErrors(new Map(imageErrors).set(idx, currentAttempt + 1));
+      return fallbacks[currentAttempt];
+    }
+    
+    return '/placeholder.svg';
+  };
+
+  const getImageUrl = (originalUrl: string, idx: number): string => {
+    const attempt = imageErrors.get(idx) || 0;
+    if (attempt > 0) {
+      const fallbacks = generateImageFallbacks(cigar.name);
+      return fallbacks[attempt - 1] || originalUrl;
+    }
+    return originalUrl;
+  };
 
   return (
     <div
@@ -35,11 +72,12 @@ export function MokaCigarCard({ cigar, className = '' }: MokaCigarCardProps) {
               {cigar.imageUrls.map((url, idx) => (
                 <CarouselItem key={idx}>
                   <img
-                    src={url}
+                    src={getImageUrl(url, idx)}
                     alt={`${cigar.name} - Image ${idx + 1}`}
                     className="w-full h-64 object-contain"
                     onError={(e) => {
-                      e.currentTarget.src = '/placeholder.svg';
+                      const newUrl = handleImageError(idx, e.currentTarget.src);
+                      e.currentTarget.src = newUrl;
                     }}
                   />
                 </CarouselItem>
@@ -50,11 +88,12 @@ export function MokaCigarCard({ cigar, className = '' }: MokaCigarCardProps) {
           </Carousel>
         ) : (
           <img
-            src={cigar.imageUrls[0] || '/placeholder.svg'}
+            src={getImageUrl(cigar.imageUrls[0] || '/placeholder.svg', 0)}
             alt={cigar.name}
             className="w-full h-64 object-contain"
             onError={(e) => {
-              e.currentTarget.src = '/placeholder.svg';
+              const newUrl = handleImageError(0, e.currentTarget.src);
+              e.currentTarget.src = newUrl;
             }}
           />
         )}
