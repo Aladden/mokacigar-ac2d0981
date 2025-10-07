@@ -1,18 +1,42 @@
 // Brand Detail Page for MokaCigar Encyclopedia
 
+import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { MokaCigarCard } from '@/components/MokaCigarCard';
 import { getCigarsByBrand } from '@/utils/mokaCigarLoader';
+import { ProcessedCigar } from '@/types/mokaCigar';
 
 export default function MokaBrandPage() {
   const { brandName } = useParams<{ brandName: string }>();
+  const [cigars, setCigars] = useState<ProcessedCigar[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+
   const displayName = brandName
     ? brandName.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')
     : '';
-  
-  const cigars = brandName ? getCigarsByBrand(displayName) : [];
+
+  useEffect(() => {
+    if (displayName) {
+      getCigarsByBrand(displayName).then(data => {
+        setCigars(data);
+        setIsLoading(false);
+      });
+    } else {
+      setIsLoading(false);
+    }
+  }, [displayName]);
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center" style={{ backgroundColor: '#000000' }}>
+        <div className="text-center">
+          <div className="text-2xl" style={{ color: '#B79E59' }}>Loading...</div>
+        </div>
+      </div>
+    );
+  }
 
   if (!brandName || cigars.length === 0) {
     return (

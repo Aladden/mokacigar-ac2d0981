@@ -1,18 +1,51 @@
 // MokaCigar Encyclopedia Home Page
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Search } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { MokaBrandCard } from '@/components/MokaBrandCard';
 import { MokaCigarCard } from '@/components/MokaCigarCard';
 import { loadMokaCigarData, searchCigars } from '@/utils/mokaCigarLoader';
+import { BrandGroup, ProcessedCigar } from '@/types/mokaCigar';
 
 export default function MokaHome() {
   const [searchQuery, setSearchQuery] = useState('');
-  const { brands, totalCigars, totalBrands } = loadMokaCigarData();
-  
-  const searchResults = searchQuery.length > 0 ? searchCigars(searchQuery) : [];
+  const [brands, setBrands] = useState<BrandGroup[]>([]);
+  const [totalCigars, setTotalCigars] = useState(0);
+  const [totalBrands, setTotalBrands] = useState(0);
+  const [searchResults, setSearchResults] = useState<ProcessedCigar[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  // Load initial data
+  useEffect(() => {
+    loadMokaCigarData().then(data => {
+      setBrands(data.brands);
+      setTotalCigars(data.totalCigars);
+      setTotalBrands(data.totalBrands);
+      setIsLoading(false);
+    });
+  }, []);
+
+  // Handle search
+  useEffect(() => {
+    if (searchQuery.length > 0) {
+      searchCigars(searchQuery).then(setSearchResults);
+    } else {
+      setSearchResults([]);
+    }
+  }, [searchQuery]);
+
   const showResults = searchQuery.length > 0;
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center" style={{ backgroundColor: '#000000' }}>
+        <div className="text-center">
+          <div className="text-2xl" style={{ color: '#B79E59' }}>Loading...</div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen" style={{ backgroundColor: '#000000' }}>

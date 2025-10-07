@@ -1,19 +1,19 @@
 // Type definitions for MokaCigar dataset
 
 export interface MokaCigarProduct {
-  Brand: string;
-  Name: string;
-  Description: string;
-  Package: number;
-  "Cigar Brand": string;
-  "Tobacco Region": string;
-  "Shape Format": string | null;
-  Intensity: string | number;
-  "Cigar Body": number;
-  "Enjoyment Time": string | null;
-  Taste: string | null;
-  "Ring Gauge": number | null;
-  image_urls: string;
+  brand: string;
+  name: string;
+  description: string;
+  package: number;
+  "cigar brand": string;
+  "tobacco region": string;
+  "shape format": string | null;
+  intensity: string | number;
+  "cigar body": number;
+  "enjoyment time": string | null;
+  taste: string | null;
+  "ring gauge": number | null;
+  image: string;
   pdf_url: string;
   background_style: string;
 }

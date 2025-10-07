@@ -1,49 +1,60 @@
 // Utility to load and process MokaCigar dataset
 
 import { MokaCigarProduct, ProcessedCigar, BrandGroup } from '@/types/mokaCigar';
-import mokaDataset from '@/data/mokacigar_dataset.json';
 import { getBrandPDF } from '@/data/brandPDFs';
 
 const GITHUB_BASE_URL = 'https://raw.githubusercontent.com/Aladden/mokacigar-ac2d0981/main/public';
+const DATASET_URL = 'https://raw.githubusercontent.com/Aladden/mokacigar-ac2d0981/main/public/mokacigar_dataset.json';
+
+let cachedData: MokaCigarProduct[] | null = null;
+
+// Fetch dataset from GitHub
+async function fetchDataset(): Promise<MokaCigarProduct[]> {
+  if (cachedData) return cachedData;
+  
+  try {
+    const response = await fetch(DATASET_URL);
+    if (!response.ok) throw new Error('Failed to fetch dataset');
+    cachedData = await response.json();
+    return cachedData;
+  } catch (error) {
+    console.error('Error fetching dataset:', error);
+    return [];
+  }
+}
 
 // Process raw dataset into usable format
 export function processCigarData(data: MokaCigarProduct[]): ProcessedCigar[] {
   return data
-    .filter(item => item.Brand && item.Name) // Skip items with null Brand or Name
+    .filter(item => item.brand && item.name) // Skip items with null brand or name
     .map((item, index) => {
-      // Parse image URLs (could be comma-separated) and convert relative to absolute
-      const imageUrls = item.image_urls
-        ? item.image_urls.split(',').map(url => {
-            const trimmedUrl = url.trim();
-            // Convert relative URLs to absolute GitHub URLs
-            if (trimmedUrl.startsWith('/')) {
-              return `${GITHUB_BASE_URL}${trimmedUrl}`;
-            }
-            return trimmedUrl;
-          })
+      // Handle single image field and convert relative to absolute
+      const imageUrl = item.image?.trim() || '';
+      const imageUrls = imageUrl
+        ? [imageUrl.startsWith('/') ? `${GITHUB_BASE_URL}${imageUrl}` : imageUrl]
         : [];
 
       // Generate unique ID from brand and name
-      const id = `${item.Brand.toLowerCase().replace(/\s+/g, '-')}-${index}`;
+      const id = `${item.brand.toLowerCase().replace(/\s+/g, '-')}-${index}`;
 
       // Normalize intensity to string
-      const intensity = typeof item.Intensity === 'number' 
-        ? `${item.Intensity}/5` 
-        : item.Intensity || 'Not specified';
+      const intensity = typeof item.intensity === 'number' 
+        ? `${item.intensity}/5` 
+        : item.intensity || 'Not specified';
 
       return {
         id,
-        brand: item.Brand,
-        name: item.Name,
-        description: item.Description || '',
-        package: item.Package || 0,
-        tobaccoRegion: item["Tobacco Region"] || 'Cuba',
-        shapeFormat: item["Shape Format"],
+        brand: item.brand,
+        name: item.name,
+        description: item.description || '',
+        package: item.package || 0,
+        tobaccoRegion: item["tobacco region"] || 'Cuba',
+        shapeFormat: item["shape format"],
         intensity,
-        cigarBody: item["Cigar Body"] || 0,
-        enjoymentTime: item["Enjoyment Time"],
-        taste: item.Taste,
-        ringGauge: item["Ring Gauge"],
+        cigarBody: item["cigar body"] || 0,
+        enjoymentTime: item["enjoyment time"],
+        taste: item.taste,
+        ringGauge: item["ring gauge"],
         imageUrls,
         pdfUrl: item.pdf_url || '',
         backgroundColor: '#000000',
@@ -73,8 +84,9 @@ export function groupCigarsByBrand(cigars: ProcessedCigar[]): BrandGroup[] {
 }
 
 // Load all data
-export function loadMokaCigarData() {
-  const processedCigars = processCigarData(mokaDataset as MokaCigarProduct[]);
+export async function loadMokaCigarData() {
+  const dataset = await fetchDataset();
+  const processedCigars = processCigarData(dataset);
   const brands = groupCigarsByBrand(processedCigars);
   
   return {
@@ -86,14 +98,14 @@ export function loadMokaCigarData() {
 }
 
 // Get cigars for specific brand
-export function getCigarsByBrand(brandName: string): ProcessedCigar[] {
-  const { cigars } = loadMokaCigarData();
+export async function getCigarsByBrand(brandName: string): Promise<ProcessedCigar[]> {
+  const { cigars } = await loadMokaCigarData();
   return cigars.filter(c => c.brand === brandName);
 }
 
 // Search cigars
-export function searchCigars(query: string): ProcessedCigar[] {
-  const { cigars } = loadMokaCigarData();
+export async function searchCigars(query: string): Promise<ProcessedCigar[]> {
+  const { cigars } = await loadMokaCigarData();
   const lowerQuery = query.toLowerCase();
   
   return cigars.filter(c => 
