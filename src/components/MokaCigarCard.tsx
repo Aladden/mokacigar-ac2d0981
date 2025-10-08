@@ -59,10 +59,10 @@ export function MokaCigarCard({ cigar, className = '' }: MokaCigarCardProps) {
 
   return (
     <div
-      className={`group relative rounded-lg overflow-hidden transition-all duration-300 hover:shadow-[0_0_30px_rgba(183,158,89,0.4)] ${className}`}
+      className={`group relative rounded-xl overflow-hidden transition-all duration-500 ${className}`}
       style={{
-        backgroundColor: cigar.backgroundColor,
-        border: `1px solid ${cigar.borderColor}`,
+        background: 'linear-gradient(145deg, hsl(0 0% 8%), hsl(0 0% 12%))',
+        border: '1px solid hsl(45 100% 65% / 0.2)',
       }}
     >
       {/* Image Section */}
