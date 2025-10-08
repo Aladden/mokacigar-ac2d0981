@@ -5,6 +5,8 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
 import { Navigation } from "./components/Navigation";
+import { Header } from "./components/Header";
+import { Footer } from "./components/Footer";
 import { Home } from "./pages/Home";
 import { About } from "./pages/About";
 import { Brands } from "./pages/Brands";
@@ -27,20 +29,24 @@ const AppContent = () => {
   };
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: '#000000' }}>
-      <Routes>
-        <Route path="/" element={<MokaHome />} />
-        <Route path="/brand/:brandName" element={<MokaBrandPage />} />
-        <Route path="/old-home" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/brands" element={<Brands />} />
-        <Route path="/old-brand/:brandId" element={<BrandDetail />} />
-        <Route path="/cigar/:cigarId" element={<CigarDetail />} />
-        <Route path="/search" element={<SearchPage />} />
-        <Route path="/auth" element={<Auth />} />
-        <Route path="/admin" element={<Admin />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
+    <div className="min-h-screen flex flex-col" style={{ backgroundColor: '#000000' }}>
+      <Header />
+      <main className="flex-1">
+        <Routes>
+          <Route path="/" element={<MokaHome />} />
+          <Route path="/brand/:brandName" element={<MokaBrandPage />} />
+          <Route path="/old-home" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/brands" element={<Brands />} />
+          <Route path="/old-brand/:brandId" element={<BrandDetail />} />
+          <Route path="/cigar/:cigarId" element={<CigarDetail />} />
+          <Route path="/search" element={<SearchPage />} />
+          <Route path="/auth" element={<Auth />} />
+          <Route path="/admin" element={<Admin />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </main>
+      <Footer />
     </div>
   );
 };

@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Calendar, Award, Map } from 'lucide-react';
 import { BrandHistory } from '@/utils/brandHistories';
 import { Badge } from './ui/badge';
+import { BrandLogo } from './BrandLogo';
 
 interface BrandHeroProps {
   brand: BrandHistory;
@@ -31,6 +32,16 @@ export function BrandHero({ brand, cigarCount, currentCount, discontinuedCount }
       </div>
 
       <div className="relative p-8 md:p-12 lg:p-16">
+        {/* Brand Logo */}
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.1, duration: 0.6 }}
+          className="mb-6"
+        >
+          <BrandLogo brandName={brand.name.toLowerCase().replace(/\s+/g, '-')} size="lg" />
+        </motion.div>
+
         {/* Brand Name */}
         <motion.h1 
           initial={{ opacity: 0, x: -30 }}

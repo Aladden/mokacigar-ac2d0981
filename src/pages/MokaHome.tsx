@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { Search } from 'lucide-react';
 import { Input } from '@/components/ui/input';
+import { HeroCarousel } from '@/components/HeroCarousel';
 import { MokaBrandCard } from '@/components/MokaBrandCard';
 import { MokaCigarCard } from '@/components/MokaCigarCard';
 import { loadMokaCigarData, searchCigars } from '@/utils/mokaCigarLoader';
@@ -48,56 +49,44 @@ export default function MokaHome() {
   }
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: '#000000' }}>
-      {/* Header */}
-      <header className="py-12 px-4 border-b" style={{ borderColor: '#B79E59' }}>
-        <div className="max-w-7xl mx-auto">
-          <h1 
-            className="font-heading text-5xl md:text-7xl mb-4 text-center"
-            style={{ color: '#B79E59' }}
-          >
-            MokaCigar Encyclopedia
-          </h1>
-          <p className="text-center text-xl mb-8" style={{ color: '#D4AF37' }}>
-            The Ultimate Cuban Cigar Collection
-          </p>
+    <div className="min-h-screen bg-background">
+      {/* Hero Carousel */}
+      <HeroCarousel />
 
+      {/* Search Section */}
+      <section className="py-12 px-4 border-b border-primary/20">
+        <div className="max-w-7xl mx-auto">
           {/* Stats */}
           <div className="flex justify-center gap-8 mb-8 text-center">
             <div>
-              <div className="text-3xl font-bold" style={{ color: '#B79E59' }}>
+              <div className="text-3xl font-bold text-primary">
                 {totalBrands}
               </div>
-              <div className="text-sm text-gray-400">Brands</div>
+              <div className="text-sm text-muted-foreground">Brands</div>
             </div>
             <div>
-              <div className="text-3xl font-bold" style={{ color: '#B79E59' }}>
+              <div className="text-3xl font-bold text-primary">
                 {totalCigars}
               </div>
-              <div className="text-sm text-gray-400">Cigars</div>
+              <div className="text-sm text-muted-foreground">Cigars</div>
             </div>
           </div>
 
           {/* Search Bar */}
           <div className="max-w-2xl mx-auto relative">
             <Search 
-              className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5" 
-              style={{ color: '#B79E59' }}
+              className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-primary" 
             />
             <Input
               type="text"
               placeholder="Search cigars, brands, or vitolas..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="pl-12 h-14 text-lg bg-black text-white placeholder:text-gray-500"
-              style={{ 
-                borderColor: '#B79E59',
-                backgroundColor: '#000000',
-              }}
+              className="pl-12 h-14 text-lg bg-card/50 border-primary/30 text-foreground placeholder:text-muted-foreground"
             />
           </div>
         </div>
-      </header>
+      </section>
 
       {/* Main Content */}
       <main className="py-12 px-4">
@@ -105,10 +94,7 @@ export default function MokaHome() {
           {showResults ? (
             // Search Results
             <>
-              <h2 
-                className="font-heading text-3xl mb-8"
-                style={{ color: '#B79E59' }}
-              >
+              <h2 className="font-heading text-3xl mb-8 text-primary">
                 Search Results ({searchResults.length})
               </h2>
               {searchResults.length > 0 ? (
@@ -119,7 +105,7 @@ export default function MokaHome() {
                 </div>
               ) : (
                 <div className="text-center py-16">
-                  <p className="text-xl" style={{ color: '#D4AF37' }}>
+                  <p className="text-xl text-muted-foreground">
                     No results found for "{searchQuery}"
                   </p>
                 </div>
@@ -128,10 +114,7 @@ export default function MokaHome() {
           ) : (
             // Brand Grid
             <>
-              <h2 
-                className="font-heading text-4xl mb-8"
-                style={{ color: '#B79E59' }}
-              >
+              <h2 className="font-heading text-4xl mb-8 text-primary">
                 Cigar Brands
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -143,13 +126,6 @@ export default function MokaHome() {
           )}
         </div>
       </main>
-
-      {/* Footer */}
-      <footer className="py-8 mt-16 border-t" style={{ borderColor: '#B79E59' }}>
-        <div className="max-w-7xl mx-auto px-4 text-center text-sm text-gray-400">
-          <p>MokaCigar Encyclopedia - Premium Cuban Cigar Collection</p>
-        </div>
-      </footer>
     </div>
   );
 }
