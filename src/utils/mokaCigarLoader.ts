@@ -43,7 +43,7 @@ export function processCigarData(data: MokaCigarProduct[]): ProcessedCigar[] {
         ? `${item.intensity}/5` 
         : item.intensity || 'Not specified';
 
-      return {
+      const processedCigar: ProcessedCigar = {
         id,
         brand: item.brand,
         name: item.name,
@@ -61,6 +61,9 @@ export function processCigarData(data: MokaCigarProduct[]): ProcessedCigar[] {
         backgroundColor: '#000000',
         borderColor: '#B79E59',
       };
+      
+      // Enrich with encyclopedia data
+      return enrichCigarWithEncyclopedia(processedCigar);
     });
 }
 
@@ -104,7 +107,7 @@ export async function getCigarsByBrand(brandName: string): Promise<ProcessedCiga
   return cigars.filter(c => c.brand === brandName);
 }
 
-// Search cigars
+// Search cigars with enhanced encyclopedia fields
 export async function searchCigars(query: string): Promise<ProcessedCigar[]> {
   const { cigars } = await loadMokaCigarData();
   const lowerQuery = query.toLowerCase();
@@ -113,6 +116,9 @@ export async function searchCigars(query: string): Promise<ProcessedCigar[]> {
     c.name.toLowerCase().includes(lowerQuery) ||
     c.brand.toLowerCase().includes(lowerQuery) ||
     c.description.toLowerCase().includes(lowerQuery) ||
-    c.shapeFormat?.toLowerCase().includes(lowerQuery)
+    c.shapeFormat?.toLowerCase().includes(lowerQuery) ||
+    c.factoryName?.toLowerCase().includes(lowerQuery) ||
+    c.vitola?.toLowerCase().includes(lowerQuery) ||
+    c.notes?.toLowerCase().includes(lowerQuery)
   );
 }

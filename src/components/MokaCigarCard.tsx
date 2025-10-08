@@ -1,8 +1,9 @@
 // MokaCigar Card Component with carousel support
 
-import { ExternalLink } from 'lucide-react';
+import { ExternalLink, Award, Calendar } from 'lucide-react';
 import { ProcessedCigar } from '@/types/mokaCigar';
 import { Button } from './ui/button';
+import { Badge } from './ui/badge';
 import { useState } from 'react';
 import {
   Carousel,
@@ -101,12 +102,45 @@ export function MokaCigarCard({ cigar, className = '' }: MokaCigarCardProps) {
 
       {/* Content Section */}
       <div className="p-6">
-        <h3 
-          className="font-heading text-xl mb-2 transition-colors"
-          style={{ color: '#B79E59' }}
-        >
-          {cigar.name}
-        </h3>
+        {/* Header with Status Badge */}
+        <div className="flex items-start justify-between gap-2 mb-3">
+          <h3 
+            className="font-heading text-xl transition-colors flex-1"
+            style={{ color: '#B79E59' }}
+          >
+            {cigar.name}
+          </h3>
+          {cigar.status && (
+            <Badge 
+              variant={cigar.status === 'Current' ? 'default' : 'secondary'}
+              className="shrink-0"
+            >
+              {cigar.status}
+            </Badge>
+          )}
+        </div>
+
+        {/* Factory Name & Vitola */}
+        {(cigar.factoryName || cigar.vitola) && (
+          <div className="flex items-center gap-2 mb-2 text-xs" style={{ color: '#D4AF37' }}>
+            {cigar.factoryName && (
+              <span className="flex items-center gap-1">
+                <Award size={14} />
+                {cigar.factoryName}
+              </span>
+            )}
+            {cigar.vitola && cigar.factoryName && <span>•</span>}
+            {cigar.vitola && <span>{cigar.vitola}</span>}
+          </div>
+        )}
+
+        {/* Release Year */}
+        {cigar.releaseYear && (
+          <div className="flex items-center gap-1 mb-3 text-xs" style={{ color: '#B79E59' }}>
+            <Calendar size={14} />
+            <span>Released: {cigar.releaseYear}</span>
+          </div>
+        )}
 
         <p className="text-sm mb-4" style={{ color: '#D4AF37' }}>
           {cigar.description}
@@ -114,22 +148,17 @@ export function MokaCigarCard({ cigar, className = '' }: MokaCigarCardProps) {
 
         {/* Specifications Grid */}
         <div className="grid grid-cols-2 gap-3 mb-4 text-sm">
-          {cigar.shapeFormat && (
+          {/* Length */}
+          {cigar.lengthMm && (
             <div>
-              <span className="text-gray-400">Vitola:</span>
+              <span className="text-gray-400">Length:</span>
               <span className="ml-2" style={{ color: '#B79E59' }}>
-                {cigar.shapeFormat}
+                {cigar.lengthInches}" ({cigar.lengthMm}mm)
               </span>
             </div>
           )}
           
-          <div>
-            <span className="text-gray-400">Intensity:</span>
-            <span className="ml-2" style={{ color: '#B79E59' }}>
-              {cigar.intensity}
-            </span>
-          </div>
-
+          {/* Ring Gauge - prefer encyclopedia data */}
           {cigar.ringGauge && (
             <div>
               <span className="text-gray-400">Ring Gauge:</span>
@@ -139,6 +168,25 @@ export function MokaCigarCard({ cigar, className = '' }: MokaCigarCardProps) {
             </div>
           )}
 
+          {/* Intensity */}
+          <div>
+            <span className="text-gray-400">Intensity:</span>
+            <span className="ml-2" style={{ color: '#B79E59' }}>
+              {cigar.intensity}
+            </span>
+          </div>
+
+          {/* Construction */}
+          {cigar.construction && (
+            <div>
+              <span className="text-gray-400">Construction:</span>
+              <span className="ml-2" style={{ color: '#B79E59' }}>
+                {cigar.construction}
+              </span>
+            </div>
+          )}
+
+          {/* Enjoyment Time */}
           {cigar.enjoymentTime && (
             <div>
               <span className="text-gray-400">Time:</span>
@@ -147,7 +195,27 @@ export function MokaCigarCard({ cigar, className = '' }: MokaCigarCardProps) {
               </span>
             </div>
           )}
+
+          {/* Shape Format (fallback if no vitola) */}
+          {cigar.shapeFormat && !cigar.vitola && (
+            <div>
+              <span className="text-gray-400">Shape:</span>
+              <span className="ml-2" style={{ color: '#B79E59' }}>
+                {cigar.shapeFormat}
+              </span>
+            </div>
+          )}
         </div>
+
+        {/* Notes Section */}
+        {cigar.notes && (
+          <div className="mb-4 p-3 rounded border border-[#B79E59]/20 bg-[#B79E59]/5">
+            <p className="text-xs" style={{ color: '#D4AF37' }}>
+              <span className="font-semibold" style={{ color: '#B79E59' }}>Notes: </span>
+              {cigar.notes}
+            </p>
+          </div>
+        )}
 
         {/* Read More Button */}
         {cigar.pdfUrl && (
