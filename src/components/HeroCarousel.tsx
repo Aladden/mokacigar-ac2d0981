@@ -3,9 +3,6 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from './ui/button';
-import heroImage1 from '@/assets/hero-cigars-1.png';
-import heroImage2 from '@/assets/hero-cigars-2.png';
-import heroImage3 from '@/assets/hero-cigars-3.png';
 
 interface HeroSlide {
   title: string;
@@ -23,7 +20,7 @@ const heroSlides: HeroSlide[] = [
     description: 'Explore the world\'s finest Cuban cigars, their stories, and traditions',
     cta: 'Explore Collection',
     ctaLink: '/brands',
-    imageUrl: heroImage1,
+    imageUrl: 'https://images.unsplash.com/photo-1606314018918-dba4b0d87b80?q=80&w=2000',
   },
   {
     title: 'Cohiba Legacy',
@@ -31,7 +28,7 @@ const heroSlides: HeroSlide[] = [
     description: 'Discover the most prestigious Cuban cigar brand',
     cta: 'View Cohiba',
     ctaLink: '/brand/cohiba',
-    imageUrl: heroImage2,
+    imageUrl: 'https://images.unsplash.com/photo-1606313564116-57804ec0ca57?q=80&w=2000',
   },
   {
     title: 'Montecristo Heritage',
@@ -39,7 +36,7 @@ const heroSlides: HeroSlide[] = [
     description: 'Experience the legendary flavors of Montecristo',
     cta: 'View Montecristo',
     ctaLink: '/brand/montecristo',
-    imageUrl: heroImage3,
+    imageUrl: 'https://images.unsplash.com/photo-1513697967678-f9339fde503b?q=80&w=2000',
   },
 ];
 
