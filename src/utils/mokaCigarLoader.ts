@@ -1,6 +1,7 @@
 // Utility to load and process MokaCigar dataset
 
 import { MokaCigarProduct, ProcessedCigar, BrandGroup } from '@/types/mokaCigar';
+import { enrichCigarWithEncyclopedia } from './encyclopediaData';
 import { getBrandPDF } from '@/data/brandPDFs';
 
 const GITHUB_BASE_URL = 'https://raw.githubusercontent.com/Aladden/mokacigar-ac2d0981/main/public';

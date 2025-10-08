@@ -35,6 +35,17 @@ export interface ProcessedCigar {
   pdfUrl: string;
   backgroundColor: string;
   borderColor: string;
+  
+  // Encyclopedia enrichment fields
+  factoryName?: string;
+  lengthMm?: number;
+  lengthInches?: string;
+  vitola?: string;
+  status?: 'Current' | 'Discontinued';
+  releaseYear?: string;
+  discontinuedYear?: string;
+  construction?: string;
+  notes?: string;
 }
 
 export interface BrandGroup {
