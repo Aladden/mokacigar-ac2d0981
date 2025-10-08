@@ -9,6 +9,17 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { useToast } from '@/hooks/use-toast';
 import { Loader2 } from 'lucide-react';
 import { useEffect } from 'react';
+import { z } from 'zod';
+
+const authSchema = z.object({
+  email: z.string()
+    .trim()
+    .email({ message: "Invalid email address" })
+    .max(255, { message: "Email must be less than 255 characters" }),
+  password: z.string()
+    .min(6, { message: "Password must be at least 6 characters" })
+    .max(72, { message: "Password must be less than 72 characters" })
+});
 
 export function Auth() {
   const [email, setEmail] = useState('');
@@ -28,45 +39,69 @@ export function Auth() {
     e.preventDefault();
     setLoading(true);
     
-    const { error } = await signIn(email, password);
-    
-    if (error) {
-      toast({
-        title: 'Sign in failed',
-        description: error.message,
-        variant: 'destructive',
-      });
-    } else {
-      toast({
-        title: 'Welcome back!',
-        description: 'You have successfully signed in.',
-      });
-      navigate('/admin');
+    try {
+      const validatedData = authSchema.parse({ email, password });
+      
+      const { error } = await signIn(validatedData.email, validatedData.password);
+      
+      if (error) {
+        toast({
+          title: 'Sign in failed',
+          description: error.message,
+          variant: 'destructive',
+        });
+      } else {
+        toast({
+          title: 'Welcome back!',
+          description: 'You have successfully signed in.',
+        });
+        navigate('/admin');
+      }
+    } catch (error) {
+      if (error instanceof z.ZodError) {
+        toast({
+          title: 'Validation error',
+          description: error.errors[0].message,
+          variant: 'destructive',
+        });
+      }
+    } finally {
+      setLoading(false);
     }
-    
-    setLoading(false);
   };
 
   const handleSignUp = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
     
-    const { error } = await signUp(email, password);
-    
-    if (error) {
-      toast({
-        title: 'Sign up failed',
-        description: error.message,
-        variant: 'destructive',
-      });
-    } else {
-      toast({
-        title: 'Account created!',
-        description: 'Please check your email to verify your account.',
-      });
+    try {
+      const validatedData = authSchema.parse({ email, password });
+      
+      const { error } = await signUp(validatedData.email, validatedData.password);
+      
+      if (error) {
+        toast({
+          title: 'Sign up failed',
+          description: error.message,
+          variant: 'destructive',
+        });
+      } else {
+        toast({
+          title: 'Account created!',
+          description: 'Please check your email to verify your account.',
+        });
+      }
+    } catch (error) {
+      if (error instanceof z.ZodError) {
+        toast({
+          title: 'Validation error',
+          description: error.errors[0].message,
+          variant: 'destructive',
+        });
+      }
+    } finally {
+      setLoading(false);
     }
-    
-    setLoading(false);
   };
 
   return (
