@@ -20,7 +20,7 @@ const heroSlides: HeroSlide[] = [
     description: 'Explore the world\'s finest Cuban cigars, their stories, and traditions',
     cta: 'Explore Collection',
     ctaLink: '/brands',
-    imageUrl: '/images/hero-cigars-1.jpg',
+    imageUrl: 'https://raw.githubusercontent.com/Aladden/mokacigar-ac2d0981/main/public/images/hero-cigars-1.jpg',
   },
   {
     title: 'Cohiba Legacy',
@@ -28,7 +28,7 @@ const heroSlides: HeroSlide[] = [
     description: 'Discover the most prestigious Cuban cigar brand',
     cta: 'View Cohiba',
     ctaLink: '/brand/cohiba',
-    imageUrl: '/images/hero-cigars-2.jpg',
+    imageUrl: 'https://raw.githubusercontent.com/Aladden/mokacigar-ac2d0981/main/public/images/hero-cigars-2.jpg',
   },
   {
     title: 'Montecristo Heritage',
@@ -36,7 +36,7 @@ const heroSlides: HeroSlide[] = [
     description: 'Experience the legendary flavors of Montecristo',
     cta: 'View Montecristo',
     ctaLink: '/brand/montecristo',
-    imageUrl: '/images/hero-cigars-3.jpg',
+    imageUrl: 'https://raw.githubusercontent.com/Aladden/mokacigar-ac2d0981/main/public/images/hero-cigars-3.jpg',
   },
 ];
 
