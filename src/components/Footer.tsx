@@ -99,6 +99,11 @@ export function Footer() {
                   Search
                 </Link>
               </li>
+              <li>
+                <Link to="/encyclopedia" className="text-sm text-foreground/70 hover:text-primary transition-colors">
+                  Encyclopedia
+                </Link>
+              </li>
             </ul>
           </div>
 

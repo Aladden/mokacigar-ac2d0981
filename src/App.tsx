@@ -18,6 +18,7 @@ import { Admin } from "./pages/Admin";
 import NotFound from "./pages/NotFound";
 import MokaHome from "./pages/MokaHome";
 import MokaBrandPage from "./pages/MokaBrandPage";
+import { Encyclopedia } from "./pages/Encyclopedia";
 
 const queryClient = new QueryClient();
 
@@ -41,6 +42,7 @@ const AppContent = () => {
           <Route path="/old-brand/:brandId" element={<BrandDetail />} />
           <Route path="/cigar/:cigarId" element={<CigarDetail />} />
           <Route path="/search" element={<SearchPage />} />
+          <Route path="/encyclopedia" element={<Encyclopedia />} />
           <Route path="/auth" element={<Auth />} />
           <Route path="/admin" element={<Admin />} />
           <Route path="*" element={<NotFound />} />

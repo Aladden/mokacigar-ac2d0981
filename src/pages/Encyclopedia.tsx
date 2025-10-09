@@ -1,527 +1,142 @@
-import { useState, useEffect } from 'react';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
+// Encyclopedia Page - Luxury Cuban Cigar Knowledge Base
+import { useState } from 'react';
+import { Search, Book, Award, Globe } from 'lucide-react';
+import { Input } from '@/components/ui/input';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { AdvancedSearch } from '@/components/search/AdvancedSearch';
-import { BrandCard } from '@/components/BrandCard';
-import { CigarCard } from '@/components/CigarCard';
-import { CigarFilters, SearchResult } from '@/types/cigar';
-import { enhancedBrands, enhancedCigars, specialReleases } from '@/data/enhancedCigarData';
-import { 
-  BookOpen, 
-  Calendar, 
-  Factory, 
-  MapPin, 
-  Star, 
-  Filter,
-  Grid3X3,
-  List,
-  Search
-} from 'lucide-react';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { ScrollArea } from '@/components/ui/scroll-area';
 
-export const Encyclopedia = () => {
-  const [activeTab, setActiveTab] = useState('overview');
-  const [filters, setFilters] = useState<CigarFilters>({});
-  const [searchResults, setSearchResults] = useState<SearchResult[]>([]);
-  const [filteredCigars, setFilteredCigars] = useState(enhancedCigars);
-  const [filteredBrands, setFilteredBrands] = useState(enhancedBrands);
-  const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
+interface GlossaryTerm {
+  term: string;
+  definition: string;
+  category: 'vitola' | 'flavor' | 'production' | 'history' | 'general';
+}
 
-  const handleFiltersChange = (newFilters: CigarFilters) => {
-    setFilters(newFilters);
-    applyFilters(newFilters);
-  };
+const glossaryTerms: GlossaryTerm[] = [
+  {
+    term: 'Vitola',
+    definition: 'The specific size and shape of a cigar, defined by its length and ring gauge. Each vitola has unique smoking characteristics.',
+    category: 'vitola'
+  },
+  {
+    term: 'Ring Gauge',
+    definition: 'The diameter of a cigar measured in 64ths of an inch. For example, a ring gauge of 50 means the cigar is 50/64 inches in diameter.',
+    category: 'vitola'
+  },
+  {
+    term: 'Habanos',
+    definition: 'The official term for Cuban cigars made from tobacco grown in Cuba. Protected denomination of origin.',
+    category: 'general'
+  },
+  {
+    term: 'Torcedor',
+    definition: 'A highly skilled cigar roller who hand-crafts premium cigars. Masters can take years to train.',
+    category: 'production'
+  },
+  {
+    term: 'Robusto',
+    definition: 'A popular vitola typically measuring 4⅛ to 5½ inches with a ring gauge of 48-52. Offers a concentrated flavor experience.',
+    category: 'vitola'
+  },
+];
 
-  const handleSearch = (query: string, searchFilters: CigarFilters) => {
-    // Implement comprehensive search logic
-    const results: SearchResult[] = [];
-    
-    // Search brands
-    enhancedBrands.forEach(brand => {
-      if (brand.name.toLowerCase().includes(query.toLowerCase()) ||
-          brand.description.toLowerCase().includes(query.toLowerCase())) {
-        results.push({
-          type: 'brand',
-          id: brand.id,
-          name: brand.name,
-          description: brand.description,
-          image: brand.logo,
-          relevance: brand.name.toLowerCase().includes(query.toLowerCase()) ? 2 : 1
-        });
-      }
-    });
+const chapters = [
+  {
+    title: 'The History of Cuban Cigars',
+    content: `Cuban cigars represent the pinnacle of cigar craftsmanship, with a rich history spanning over 500 years. The story begins with Christopher Columbus's arrival in Cuba in 1492, where he observed the indigenous Taíno people smoking rolled tobacco leaves.
 
-    // Search cigars
-    enhancedCigars.forEach(cigar => {
-      if (cigar.name.toLowerCase().includes(query.toLowerCase()) ||
-          cigar.vitola.toLowerCase().includes(query.toLowerCase()) ||
-          cigar.description.toLowerCase().includes(query.toLowerCase())) {
-        results.push({
-          type: 'cigar',
-          id: cigar.id,
-          name: cigar.name,
-          description: cigar.description,
-          image: cigar.image,
-          relevance: cigar.name.toLowerCase().includes(query.toLowerCase()) ? 2 : 1
-        });
-      }
-    });
+By the 18th century, Cuba had established itself as the world's premier tobacco producer. The unique combination of Cuban soil (particularly the red clay of Vuelta Abajo), climate, and generational expertise creates tobacco of unparalleled quality.`
+  },
+];
 
-    // Sort by relevance
-    results.sort((a, b) => b.relevance - a.relevance);
-    setSearchResults(results);
-    applyFilters(searchFilters);
-  };
+export function Encyclopedia() {
+  const [searchQuery, setSearchQuery] = useState('');
 
-  const applyFilters = (filterOptions: CigarFilters) => {
-    let filteredCigarResults = enhancedCigars;
-    let filteredBrandResults = enhancedBrands;
-
-    // Apply brand status filter
-    if (filterOptions.status) {
-      filteredBrandResults = filteredBrandResults.filter(brand => brand.status === filterOptions.status);
-      const brandIds = filteredBrandResults.map(brand => brand.id);
-      filteredCigarResults = filteredCigarResults.filter(cigar => brandIds.includes(cigar.brand));
-    }
-
-    // Apply strength filter
-    if (filterOptions.strength) {
-      filteredCigarResults = filteredCigarResults.filter(cigar => cigar.strength === filterOptions.strength);
-    }
-
-    // Apply flavor profile filter
-    if (filterOptions.flavourProfile) {
-      filteredCigarResults = filteredCigarResults.filter(cigar => cigar.flavourProfile === filterOptions.flavourProfile);
-    }
-
-    // Apply production status filter
-    if (filterOptions.productionStatus) {
-      filteredCigarResults = filteredCigarResults.filter(cigar => cigar.productionStatus === filterOptions.productionStatus);
-    }
-
-    // Apply release type filter
-    if (filterOptions.releaseType) {
-      filteredCigarResults = filteredCigarResults.filter(cigar => cigar.releaseType === filterOptions.releaseType);
-    }
-
-    // Apply size filters
-    if (filterOptions.ringGauge) {
-      if (filterOptions.ringGauge.min) {
-        filteredCigarResults = filteredCigarResults.filter(cigar => cigar.ringGauge >= filterOptions.ringGauge!.min!);
-      }
-      if (filterOptions.ringGauge.max) {
-        filteredCigarResults = filteredCigarResults.filter(cigar => cigar.ringGauge <= filterOptions.ringGauge!.max!);
-      }
-    }
-
-    if (filterOptions.length) {
-      if (filterOptions.length.min) {
-        filteredCigarResults = filteredCigarResults.filter(cigar => cigar.length >= filterOptions.length!.min!);
-      }
-      if (filterOptions.length.max) {
-        filteredCigarResults = filteredCigarResults.filter(cigar => cigar.length <= filterOptions.length!.max!);
-      }
-    }
-
-    // Apply launch year filter
-    if (filterOptions.launchYear) {
-      if (filterOptions.launchYear.min) {
-        filteredCigarResults = filteredCigarResults.filter(cigar => 
-          cigar.launchYear && cigar.launchYear >= filterOptions.launchYear!.min!
-        );
-      }
-      if (filterOptions.launchYear.max) {
-        filteredCigarResults = filteredCigarResults.filter(cigar => 
-          cigar.launchYear && cigar.launchYear <= filterOptions.launchYear!.max!
-        );
-      }
-    }
-
-    setFilteredCigars(filteredCigarResults);
-    setFilteredBrands(filteredBrandResults);
-  };
-
-  const getFilterSummary = () => {
-    const activeFilters = Object.keys(filters).length;
-    const totalResults = filteredCigars.length + filteredBrands.length;
-    return {
-      activeFilters,
-      totalResults,
-      cigars: filteredCigars.length,
-      brands: filteredBrands.length
-    };
-  };
-
-  const summary = getFilterSummary();
+  const filteredGlossary = glossaryTerms.filter(item =>
+    item.term.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    item.definition.toLowerCase().includes(searchQuery.toLowerCase())
+  );
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Hero Section */}
-      <section className="py-16 px-6 bg-gradient-subtle">
-        <div className="max-w-6xl mx-auto text-center space-y-6">
-          <h1 className="font-heading text-4xl md:text-5xl font-bold text-primary">
-            The Ultimate
-            <span className="block text-primary-glow">Cuban Cigar Encyclopedia</span>
-          </h1>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Explore the complete collection of Cuban cigars, from legendary global brands to 
-            rare limited editions. Discover the heritage, craftsmanship, and stories behind 
-            every cigar ever produced in Cuba.
-          </p>
-          <div className="flex justify-center space-x-4 pt-4">
-            <Badge variant="secondary" className="text-sm">
-              {enhancedBrands.length} Brands
-            </Badge>
-            <Badge variant="secondary" className="text-sm">
-              {enhancedCigars.length} Cigars
-            </Badge>
-            <Badge variant="secondary" className="text-sm">
-              {specialReleases.length} Special Releases
-            </Badge>
+      <div className="relative bg-gradient-to-b from-card to-background border-b border-primary/20">
+        <div className="container mx-auto px-4 py-16">
+          <div className="max-w-3xl mx-auto text-center">
+            <Book className="w-16 h-16 mx-auto mb-6 text-primary" />
+            <h1 className="font-heading text-4xl md:text-6xl text-primary mb-4">
+              The Cigar Encyclopedia
+            </h1>
+            <p className="text-xl text-muted-foreground">
+              Your comprehensive guide to Cuban cigar heritage, knowledge, and appreciation
+            </p>
           </div>
         </div>
-      </section>
+      </div>
 
-      {/* Navigation Tabs */}
-      <section className="px-6 -mt-8">
-        <div className="max-w-6xl mx-auto">
-          <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-            <TabsList className="grid w-full grid-cols-6 glass border-primary/20 bg-background/50">
-              <TabsTrigger value="overview">
-                <BookOpen className="h-4 w-4 mr-2" />
-                Overview
-              </TabsTrigger>
-              <TabsTrigger value="search">
-                <Search className="h-4 w-4 mr-2" />
-                Search
-              </TabsTrigger>
-              <TabsTrigger value="brands">
-                <Star className="h-4 w-4 mr-2" />
-                Brands
-              </TabsTrigger>
-              <TabsTrigger value="cigars">
-                <Grid3X3 className="h-4 w-4 mr-2" />
-                Cigars
-              </TabsTrigger>
-              <TabsTrigger value="releases">
-                <Calendar className="h-4 w-4 mr-2" />
-                Releases
-              </TabsTrigger>
-              <TabsTrigger value="heritage">
-                <MapPin className="h-4 w-4 mr-2" />
-                Heritage
-              </TabsTrigger>
-            </TabsList>
+      <div className="container mx-auto px-4 py-12">
+        <Tabs defaultValue="chapters" className="w-full">
+          <TabsList className="grid w-full grid-cols-2 max-w-md mx-auto mb-8">
+            <TabsTrigger value="chapters">Chapters</TabsTrigger>
+            <TabsTrigger value="glossary">Glossary</TabsTrigger>
+          </TabsList>
 
-            {/* Overview Tab */}
-            <TabsContent value="overview" className="mt-8 space-y-8">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <Card className="glass border-primary/20 hover:border-primary/40 transition-colors">
-                  <CardContent className="p-6 text-center">
-                    <Star className="h-8 w-8 text-primary mx-auto mb-3" />
-                    <h3 className="font-semibold text-lg text-primary">Global Brands</h3>
-                    <p className="text-2xl font-bold text-primary-glow mt-2">
-                      {enhancedBrands.filter(b => b.status === 'global').length}
-                    </p>
-                    <p className="text-sm text-muted-foreground mt-1">Premium worldwide</p>
-                  </CardContent>
-                </Card>
+          <TabsContent value="chapters" className="space-y-6">
+            {chapters.map((chapter, idx) => (
+              <Card key={idx} className="border-primary/20">
+                <CardHeader>
+                  <CardTitle className="font-heading text-2xl text-primary">
+                    {chapter.title}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-foreground/80 leading-relaxed">{chapter.content}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </TabsContent>
 
-                <Card className="glass border-primary/20 hover:border-primary/40 transition-colors">
-                  <CardContent className="p-6 text-center">
-                    <Factory className="h-8 w-8 text-primary mx-auto mb-3" />
-                    <h3 className="font-semibold text-lg text-primary">Active Cigars</h3>
-                    <p className="text-2xl font-bold text-primary-glow mt-2">
-                      {enhancedCigars.filter(c => c.productionStatus === 'current').length}
-                    </p>
-                    <p className="text-sm text-muted-foreground mt-1">In production</p>
-                  </CardContent>
-                </Card>
-
-                <Card className="glass border-primary/20 hover:border-primary/40 transition-colors">
-                  <CardContent className="p-6 text-center">
-                    <Calendar className="h-8 w-8 text-primary mx-auto mb-3" />
-                    <h3 className="font-semibold text-lg text-primary">Limited Editions</h3>
-                    <p className="text-2xl font-bold text-primary-glow mt-2">
-                      {enhancedCigars.filter(c => c.isLimited).length}
-                    </p>
-                    <p className="text-sm text-muted-foreground mt-1">Rare releases</p>
-                  </CardContent>
-                </Card>
-
-                <Card className="glass border-primary/20 hover:border-primary/40 transition-colors">
-                  <CardContent className="p-6 text-center">
-                    <BookOpen className="h-8 w-8 text-primary mx-auto mb-3" />
-                    <h3 className="font-semibold text-lg text-primary">Heritage Years</h3>
-                    <p className="text-2xl font-bold text-primary-glow mt-2">180+</p>
-                    <p className="text-sm text-muted-foreground mt-1">Of tradition</p>
-                  </CardContent>
-                </Card>
+          <TabsContent value="glossary">
+            <div className="max-w-4xl mx-auto">
+              <div className="mb-6">
+                <div className="relative">
+                  <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" size={20} />
+                  <Input
+                    type="text"
+                    placeholder="Search glossary terms..."
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    className="pl-10 bg-card border-primary/30"
+                  />
+                </div>
               </div>
 
-              {/* Featured Brands Preview */}
-              <div>
-                <h2 className="font-heading text-2xl font-semibold text-primary mb-6">
-                  Featured Global Brands
-                </h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {enhancedBrands.filter(b => b.status === 'global').slice(0, 6).map((brand) => (
-                    <BrandCard key={brand.id} brand={brand} />
+              <ScrollArea className="h-[600px]">
+                <div className="space-y-4 pr-4">
+                  {filteredGlossary.map((item, idx) => (
+                    <Card key={idx} className="border-primary/20">
+                      <CardHeader className="pb-3">
+                        <div className="flex items-center justify-between">
+                          <CardTitle className="font-heading text-xl text-primary">
+                            {item.term}
+                          </CardTitle>
+                          <span className="text-xs px-2 py-1 rounded bg-primary/10 text-primary capitalize">
+                            {item.category}
+                          </span>
+                        </div>
+                      </CardHeader>
+                      <CardContent>
+                        <CardDescription className="text-foreground/70">
+                          {item.definition}
+                        </CardDescription>
+                      </CardContent>
+                    </Card>
                   ))}
                 </div>
-              </div>
-            </TabsContent>
-
-            {/* Advanced Search Tab */}
-            <TabsContent value="search" className="mt-8">
-              <AdvancedSearch 
-                onFiltersChange={handleFiltersChange}
-                onSearch={handleSearch}
-                currentFilters={filters}
-              />
-              
-              {/* Search Results */}
-              {(summary.activeFilters > 0 || searchResults.length > 0) && (
-                <div className="mt-8">
-                  <div className="flex items-center justify-between mb-6">
-                    <div>
-                      <h2 className="font-heading text-2xl font-semibold text-primary">
-                        Search Results
-                      </h2>
-                      <p className="text-muted-foreground">
-                        {summary.totalResults} results found 
-                        {summary.activeFilters > 0 && ` with ${summary.activeFilters} filters applied`}
-                      </p>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                      <Button
-                        variant={viewMode === 'grid' ? 'default' : 'outline'}
-                        size="sm"
-                        onClick={() => setViewMode('grid')}
-                      >
-                        <Grid3X3 className="h-4 w-4" />
-                      </Button>
-                      <Button
-                        variant={viewMode === 'list' ? 'default' : 'outline'}
-                        size="sm"
-                        onClick={() => setViewMode('list')}
-                      >
-                        <List className="h-4 w-4" />
-                      </Button>
-                    </div>
-                  </div>
-
-                  {/* Brands Results */}
-                  {filteredBrands.length > 0 && (
-                    <div className="mb-8">
-                      <h3 className="font-semibold text-lg text-primary mb-4">
-                        Brands ({filteredBrands.length})
-                      </h3>
-                      <div className={viewMode === 'grid' 
-                        ? "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
-                        : "space-y-4"
-                      }>
-                        {filteredBrands.map((brand) => (
-                          <BrandCard key={brand.id} brand={brand} />
-                        ))}
-                      </div>
-                    </div>
-                  )}
-
-                  {/* Cigars Results */}
-                  {filteredCigars.length > 0 && (
-                    <div>
-                      <h3 className="font-semibold text-lg text-primary mb-4">
-                        Cigars ({filteredCigars.length})
-                      </h3>
-                      <div className={viewMode === 'grid' 
-                        ? "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
-                        : "space-y-4"
-                      }>
-                        {filteredCigars.map((cigar) => (
-                          <CigarCard key={cigar.id} cigar={cigar} />
-                        ))}
-                      </div>
-                    </div>
-                  )}
-                </div>
-              )}
-            </TabsContent>
-
-            {/* Brands Tab */}
-            <TabsContent value="brands" className="mt-8">
-              <div className="mb-6 flex items-center justify-between">
-                <div>
-                  <h2 className="font-heading text-2xl font-semibold text-primary">
-                    All Cuban Cigar Brands
-                  </h2>
-                  <p className="text-muted-foreground mt-1">
-                    Explore {filteredBrands.length} legendary Cuban cigar brands
-                  </p>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <Button
-                    variant={viewMode === 'grid' ? 'default' : 'outline'}
-                    size="sm"
-                    onClick={() => setViewMode('grid')}
-                  >
-                    <Grid3X3 className="h-4 w-4" />
-                  </Button>
-                  <Button
-                    variant={viewMode === 'list' ? 'default' : 'outline'}
-                    size="sm"
-                    onClick={() => setViewMode('list')}
-                  >
-                    <List className="h-4 w-4" />
-                  </Button>
-                </div>
-              </div>
-
-              {/* Brand Status Filter */}
-              <div className="mb-6 flex flex-wrap gap-2">
-                <Button
-                  variant={!filters.status ? 'default' : 'outline'}
-                  size="sm"
-                  onClick={() => handleFiltersChange({ ...filters, status: undefined })}
-                >
-                  All Brands
-                </Button>
-                <Button
-                  variant={filters.status === 'global' ? 'default' : 'outline'}
-                  size="sm"
-                  onClick={() => handleFiltersChange({ ...filters, status: 'global' })}
-                >
-                  Global ({enhancedBrands.filter(b => b.status === 'global').length})
-                </Button>
-                <Button
-                  variant={filters.status === 'multi-regional' ? 'default' : 'outline'}
-                  size="sm"
-                  onClick={() => handleFiltersChange({ ...filters, status: 'multi-regional' })}
-                >
-                  Multi-Regional ({enhancedBrands.filter(b => b.status === 'multi-regional').length})
-                </Button>
-                <Button
-                  variant={filters.status === 'regional' ? 'default' : 'outline'}
-                  size="sm"
-                  onClick={() => handleFiltersChange({ ...filters, status: 'regional' })}
-                >
-                  Regional ({enhancedBrands.filter(b => b.status === 'regional').length})
-                </Button>
-                <Button
-                  variant={filters.status === 'discontinued' ? 'default' : 'outline'}
-                  size="sm"
-                  onClick={() => handleFiltersChange({ ...filters, status: 'discontinued' })}
-                >
-                  Discontinued ({enhancedBrands.filter(b => b.status === 'discontinued').length})
-                </Button>
-              </div>
-
-              <div className={viewMode === 'grid' 
-                ? "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
-                : "space-y-4"
-              }>
-                {filteredBrands.map((brand) => (
-                  <BrandCard key={brand.id} brand={brand} />
-                ))}
-              </div>
-            </TabsContent>
-
-            {/* Cigars Tab */}
-            <TabsContent value="cigars" className="mt-8">
-              <div className="mb-6 flex items-center justify-between">
-                <div>
-                  <h2 className="font-heading text-2xl font-semibold text-primary">
-                    All Cuban Cigars
-                  </h2>
-                  <p className="text-muted-foreground mt-1">
-                    Browse {filteredCigars.length} unique Cuban cigar vitolas
-                  </p>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <Button
-                    variant={viewMode === 'grid' ? 'default' : 'outline'}
-                    size="sm"
-                    onClick={() => setViewMode('grid')}
-                  >
-                    <Grid3X3 className="h-4 w-4" />
-                  </Button>
-                  <Button
-                    variant={viewMode === 'list' ? 'default' : 'outline'}
-                    size="sm"
-                    onClick={() => setViewMode('list')}
-                  >
-                    <List className="h-4 w-4" />
-                  </Button>
-                </div>
-              </div>
-
-              {/* Quick Filters */}
-              <div className="mb-6 flex flex-wrap gap-2">
-                <Button
-                  variant={!filters.productionStatus ? 'default' : 'outline'}
-                  size="sm"
-                  onClick={() => handleFiltersChange({ ...filters, productionStatus: undefined })}
-                >
-                  All Cigars
-                </Button>
-                <Button
-                  variant={filters.productionStatus === 'current' ? 'default' : 'outline'}
-                  size="sm"
-                  onClick={() => handleFiltersChange({ ...filters, productionStatus: 'current' })}
-                >
-                  Current ({enhancedCigars.filter(c => c.productionStatus === 'current').length})
-                </Button>
-                <Button
-                  variant={filters.productionStatus === 'discontinued' ? 'default' : 'outline'}
-                  size="sm"
-                  onClick={() => handleFiltersChange({ ...filters, productionStatus: 'discontinued' })}
-                >
-                  Discontinued ({enhancedCigars.filter(c => c.productionStatus === 'discontinued').length})
-                </Button>
-                <Button
-                  variant={filters.releaseType === 'limited_edition' ? 'default' : 'outline'}
-                  size="sm"
-                  onClick={() => handleFiltersChange({ ...filters, releaseType: filters.releaseType === 'limited_edition' ? undefined : 'limited_edition' })}
-                >
-                  Limited Editions ({enhancedCigars.filter(c => c.isLimited).length})
-                </Button>
-              </div>
-
-              <div className={viewMode === 'grid' 
-                ? "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
-                : "space-y-4"
-              }>
-                {filteredCigars.map((cigar) => (
-                  <CigarCard key={cigar.id} cigar={cigar} />
-                ))}
-              </div>
-            </TabsContent>
-
-            <TabsContent value="releases" className="mt-8">
-              <div className="text-center py-16">
-                <h2 className="font-heading text-2xl font-semibold text-primary mb-4">
-                  Special Releases Coming Soon
-                </h2>
-                <p className="text-muted-foreground">
-                  Complete catalog of limited editions, regional releases, and special events.
-                </p>
-              </div>
-            </TabsContent>
-
-            <TabsContent value="heritage" className="mt-8">
-              <div className="text-center py-16">
-                <h2 className="font-heading text-2xl font-semibold text-primary mb-4">
-                  Heritage Section Coming Soon
-                </h2>
-                <p className="text-muted-foreground">
-                  Explore tobacco regions, factories, historical events, and Cuban cigar culture.
-                </p>
-              </div>
-            </TabsContent>
-          </Tabs>
-        </div>
-      </section>
+              </ScrollArea>
+            </div>
+          </TabsContent>
+        </Tabs>
+      </div>
     </div>
   );
-};
+}
