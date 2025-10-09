@@ -1,7 +1,8 @@
 // Image sourcing utility with fallback cascade
-// Priority: GitHub repo -> mokacigar.com -> cubancigarwebsite.com -> habanos.com
+// Priority: GitHub repo -> mokacigar.com -> cubancigarwebsite.com -> habanos.com -> placeholder
 
 const GITHUB_BASE = 'https://raw.githubusercontent.com/Aladden/mokacigar-ac2d0981/main/public/images';
+const GITHUB_BRANDS_BASE = 'https://raw.githubusercontent.com/Aladden/mokacigar-ac2d0981/main/public/images/brands';
 
 export interface ImageSource {
   url: string;
@@ -29,9 +30,9 @@ export function getCigarImage(brandName: string, cigarName: string): ImageSource
 export function getBrandLogo(brandName: string): ImageSource {
   const slug = brandName.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]/g, '');
   
-  // Try GitHub first
+  // Try GitHub brands folder first
   return {
-    url: `${GITHUB_BASE}/brands/${slug}-logo.png`,
+    url: `${GITHUB_BRANDS_BASE}/${slug}.png`,
     source: 'github'
   };
 }

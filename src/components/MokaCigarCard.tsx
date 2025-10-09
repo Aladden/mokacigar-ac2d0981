@@ -1,10 +1,11 @@
-// MokaCigar Card Component with carousel support
+// MokaCigar Card Component with carousel support and detail modal
 
-import { ExternalLink, Award, Calendar } from 'lucide-react';
+import { ExternalLink, Award, Calendar, Info } from 'lucide-react';
 import { ProcessedCigar } from '@/types/mokaCigar';
 import { Button } from './ui/button';
 import { Badge } from './ui/badge';
 import { useState } from 'react';
+import { CigarDetailModal } from './CigarDetailModal';
 import {
   Carousel,
   CarouselContent,
@@ -33,6 +34,7 @@ interface MokaCigarCardProps {
 
 export function MokaCigarCard({ cigar, className = '' }: MokaCigarCardProps) {
   const [imageErrors, setImageErrors] = useState<Map<number, number>>(new Map());
+  const [showDetailModal, setShowDetailModal] = useState(false);
   const hasMultipleImages = cigar.imageUrls.length > 1;
 
   const handleImageError = (idx: number, currentUrl: string) => {
@@ -217,25 +219,40 @@ export function MokaCigarCard({ cigar, className = '' }: MokaCigarCardProps) {
           </div>
         )}
 
-        {/* Read More Button */}
-        {cigar.pdfUrl && (
+        {/* Action Buttons */}
+        <div className="flex gap-2">
           <Button
-            asChild
-            className="w-full bg-transparent border text-[#B79E59] hover:bg-[#B79E59] hover:text-black transition-all"
-            style={{ borderColor: '#B79E59' }}
+            onClick={() => setShowDetailModal(true)}
+            className="flex-1 bg-primary/10 border border-primary text-primary hover:bg-primary hover:text-black transition-all"
           >
-            <a
-              href={cigar.pdfUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2"
-            >
-              <span>Read More</span>
-              <ExternalLink className="w-4 h-4" />
-            </a>
+            <Info className="w-4 h-4 mr-2" />
+            Details
           </Button>
-        )}
+          {cigar.pdfUrl && (
+            <Button
+              asChild
+              variant="outline"
+              className="flex-1 border-primary/50 text-primary hover:bg-primary/10"
+            >
+              <a
+                href={cigar.pdfUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2"
+              >
+                <ExternalLink className="w-4 h-4" />
+              </a>
+            </Button>
+          )}
+        </div>
       </div>
+
+      {/* Detail Modal */}
+      <CigarDetailModal 
+        cigar={cigar}
+        open={showDetailModal}
+        onOpenChange={setShowDetailModal}
+      />
     </div>
   );
 }

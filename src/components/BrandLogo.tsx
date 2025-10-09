@@ -1,4 +1,5 @@
-// Brand Logo Component - displays brand logos from MokaCigar
+// Brand Logo Component - displays brand logos from GitHub and MokaCigar
+import { useState } from 'react';
 import { cn } from "@/lib/utils";
 
 interface BrandLogoProps {
@@ -13,7 +14,11 @@ const sizeClasses = {
   lg: 'h-32'
 };
 
-// Map brand names to their logo filenames on mokacigar.com
+// GitHub brand logos from your repository
+const GITHUB_BRANDS_BASE = 'https://raw.githubusercontent.com/Aladden/mokacigar-ac2d0981/main/public/images/brands';
+const MOKA_BRAND_BASE_URL = 'https://mokacigar.com/wp-content/uploads/2025/05';
+
+// Map brand names to their logo filenames (both GitHub and MokaCigar)
 const brandLogoMap: Record<string, string> = {
   'cohiba': 'Cohiba_Logo_Gold_320x320_crop_center__1_-removebg-preview.png',
   'montecristo': 'Montecristo_Logo_Gold_320x320_crop_center-removebg-preview.png',
@@ -25,24 +30,38 @@ const brandLogoMap: Record<string, string> = {
   'trinidad': 'Trinidad_Logo_Gold_320x320_crop_center-removebg-preview.png',
 };
 
-const MOKA_BRAND_BASE_URL = 'https://mokacigar.com/wp-content/uploads/2025/05';
-
 export const BrandLogo = ({ brandName, className, size = 'md' }: BrandLogoProps) => {
   const normalizedName = brandName.toLowerCase().replace(/\s+/g, '-');
   const logoFilename = brandLogoMap[normalizedName];
+  const [imageError, setImageError] = useState(false);
+  const [fallbackAttempt, setFallbackAttempt] = useState(0);
   
-  if (!logoFilename) {
-    // Fallback to text if logo not found
+  // Try GitHub first, then MokaCigar
+  const getLogoUrl = () => {
+    if (!logoFilename) return null;
+    
+    if (fallbackAttempt === 0) {
+      // Try GitHub brands folder first
+      return `${GITHUB_BRANDS_BASE}/${normalizedName}.png`;
+    } else if (fallbackAttempt === 1) {
+      // Then try MokaCigar
+      return `${MOKA_BRAND_BASE_URL}/${logoFilename}`;
+    }
+    return null;
+  };
+
+  const logoUrl = getLogoUrl();
+  
+  if (!logoUrl || imageError) {
+    // Fallback to text if no logo found or all attempts failed
     return (
       <div className={cn("flex items-center justify-center", className)}>
-        <span className={cn("font-heading text-primary", sizeClasses[size])}>
+        <span className={cn("font-heading text-primary uppercase", sizeClasses[size].replace('h-', 'text-'))}>
           {brandName}
         </span>
       </div>
     );
   }
-
-  const logoUrl = `${MOKA_BRAND_BASE_URL}/${logoFilename}`;
 
   return (
     <div className={cn("flex items-center justify-center", className)}>
@@ -50,12 +69,11 @@ export const BrandLogo = ({ brandName, className, size = 'md' }: BrandLogoProps)
         src={logoUrl} 
         alt={`${brandName} logo`} 
         className={cn(sizeClasses[size], "w-auto object-contain")}
-        onError={(e) => {
-          // Fallback to text on error
-          e.currentTarget.style.display = 'none';
-          const parent = e.currentTarget.parentElement;
-          if (parent) {
-            parent.innerHTML = `<span class="font-heading text-primary">${brandName}</span>`;
+        onError={() => {
+          if (fallbackAttempt < 1) {
+            setFallbackAttempt(fallbackAttempt + 1);
+          } else {
+            setImageError(true);
           }
         }}
       />
