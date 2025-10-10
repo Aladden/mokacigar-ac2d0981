@@ -22,6 +22,7 @@ export const Navigation = ({ onSearch }: NavigationProps) => {
   const navigation = [
     { name: 'Home', href: '/' },
     { name: 'Brands', href: '/brands' },
+    { name: 'Library', href: '/library' },
     { name: 'About', href: '/about' },
   ];
 

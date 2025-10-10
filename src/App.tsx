@@ -19,6 +19,12 @@ import NotFound from "./pages/NotFound";
 import MokaHome from "./pages/MokaHome";
 import MokaBrandPage from "./pages/MokaBrandPage";
 import { Encyclopedia } from "./pages/Encyclopedia";
+import { Library } from "./pages/Library";
+import { IntroductionAficionado } from "./pages/articles/IntroductionAficionado";
+import { LanguageOfLeaf } from "./pages/articles/LanguageOfLeaf";
+import { BlueprintOfFlavor } from "./pages/articles/BlueprintOfFlavor";
+import { SoulOfSmoke } from "./pages/articles/SoulOfSmoke";
+import { HandsOfMasters } from "./pages/articles/HandsOfMasters";
 
 const queryClient = new QueryClient();
 
@@ -43,6 +49,12 @@ const AppContent = () => {
           <Route path="/cigar/:cigarId" element={<CigarDetail />} />
           <Route path="/search" element={<SearchPage />} />
           <Route path="/encyclopedia" element={<Encyclopedia />} />
+          <Route path="/library" element={<Library />} />
+          <Route path="/library/introduction-aficionado" element={<IntroductionAficionado />} />
+          <Route path="/library/language-of-leaf" element={<LanguageOfLeaf />} />
+          <Route path="/library/blueprint-of-flavor" element={<BlueprintOfFlavor />} />
+          <Route path="/library/soul-of-smoke" element={<SoulOfSmoke />} />
+          <Route path="/library/hands-of-masters" element={<HandsOfMasters />} />
           <Route path="/auth" element={<Auth />} />
           <Route path="/admin" element={<Admin />} />
           <Route path="*" element={<NotFound />} />
