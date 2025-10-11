@@ -7,19 +7,13 @@ import { Input } from '@/components/ui/input';
 import { BrandCard } from '@/components/BrandCard';
 import { brands, searchCigars } from '@/data/cigarData';
 import { MokaLogo } from '@/components/MokaLogo';
-import heroLibrary from '@/assets/hero-library.png';
-import heroRomeoBox from '@/assets/hero-romeo-box.jpg';
-import heroRomeoCigar from '@/assets/hero-romeo-cigar.jpg';
+import heroCigar from '@/assets/hero-cigar.jpg';
 
 export const Home = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  const heroImages = [
-    heroLibrary,
-    heroRomeoBox, 
-    heroRomeoCigar
-  ];
+  const heroImages = [heroCigar];
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -112,11 +106,11 @@ export const Home = () => {
             {/* Quick Stats */}
             <div className="grid grid-cols-3 gap-8 max-w-md mx-auto pt-8">
               <div className="text-center">
-                <div className="text-2xl font-heading font-bold text-primary">{brands.length}</div>
+                <div className="text-2xl font-heading font-bold text-primary">27</div>
                 <div className="text-sm text-muted-foreground">Premium Brands</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl font-heading font-bold text-primary">50+</div>
+                <div className="text-2xl font-heading font-bold text-primary">400+</div>
                 <div className="text-sm text-muted-foreground">Curated Cigars</div>
               </div>
               <div className="text-center">

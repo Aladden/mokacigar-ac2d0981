@@ -32,7 +32,7 @@ export function Header() {
         <div className="flex h-20 items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex-shrink-0">
-            <MokaLogo size="lg" />
+            <MokaLogo size="xl" />
           </Link>
 
           {/* Desktop Navigation */}
