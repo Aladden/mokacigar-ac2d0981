@@ -22,6 +22,7 @@ export function Header() {
   const navLinks = [
     { name: 'Home', path: '/' },
     { name: 'Brands', path: '/brands' },
+    { name: 'Encyclopedia', path: '/library' },
     { name: 'About', path: '/about' },
   ];
 
@@ -31,7 +32,7 @@ export function Header() {
         <div className="flex h-20 items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex-shrink-0">
-            <MokaLogo size="md" />
+            <MokaLogo size="lg" />
           </Link>
 
           {/* Desktop Navigation */}
